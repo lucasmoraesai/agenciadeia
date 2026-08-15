@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    "Agência de IA, automação, vibe coding e Claude Code. Automatize sua empresa.",
+    "nohumans — agência de IA, automação, vibe coding e Claude Code. Automatize sua empresa.",
   openGraph: {
     title: SITE_NAME,
     description: "Automatize sua empresa com IA, automação, vibe coding e Claude Code.",

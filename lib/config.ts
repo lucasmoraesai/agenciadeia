@@ -1,5 +1,5 @@
 export const SITE_URL = "https://agenciadeia.tech";
-export const SITE_NAME = "Agência de IA";
+export const SITE_NAME = "nohumans";
 
 export const EMAIL = "contato@lucasmoraes.ai";
 export const INSTAGRAM = "https://www.instagram.com/lucasmoraes.ai/";
@@ -9,109 +9,124 @@ export const PHOTO_PROFILE = "/photos/perfil.jpg";
 
 export const HERO_WORDS = ["IA", "Automação", "Vibe Coding", "Claude Code"] as const;
 
-export const SERVICES = [
+export const AVULSOS = [
   {
-    id: "ia",
-    title: "IA",
-    body: "Agentes, copilots e operação que o time usa no dia seguinte. Produção, não piloto.",
+    id: "marketing",
+    title: "Marketing",
+    body: "Campanha, conteúdo, criativo e canais.",
   },
   {
-    id: "automacao",
-    title: "Automação",
-    body: "Workflows, CRM, follow-up e relatórios rodando sozinhos. Menos clique, mais decisão.",
+    id: "vendas",
+    title: "Vendas",
+    body: "CRM, follow-up, proposta e closer.",
   },
   {
-    id: "vibe-coding",
-    title: "Vibe Coding",
-    body: "Do brief ao deploy. Produto no ar — não demo que some.",
+    id: "atendimento",
+    title: "Atendimento",
+    body: "WhatsApp, ticket, FAQ e handoff.",
   },
   {
-    id: "claude-code",
-    title: "Claude Code",
-    body: "Repos, skills e pipelines para o time shippar com Claude, não só conversar com ele.",
+    id: "financeiro",
+    title: "Financeiro",
+    body: "Relatório, conciliação, cobrança e dashboard.",
+  },
+  {
+    id: "operacoes",
+    title: "Operações",
+    body: "Processo, integração e agente no dia a dia.",
+  },
+  {
+    id: "rh",
+    title: "RH",
+    body: "Admissão, onboarding, vaga e rotina de people.",
+  },
+  {
+    id: "produto",
+    title: "Produto",
+    body: "Roadmap, spec, protótipo e vibe coding.",
+  },
+  {
+    id: "tecnologia",
+    title: "Tecnologia",
+    body: "Automação interna, Claude Code e stack.",
+  },
+  {
+    id: "juridico",
+    title: "Jurídico",
+    body: "Contrato, cláusula, revisão e minuta.",
+  },
+  {
+    id: "dados",
+    title: "Dados",
+    body: "Painel, extração, BI e relatório recorrente.",
+  },
+] as const;
+
+export const AVULSO_PRICE = "R$ 3.000";
+export const AVULSO_PERIOD = "/mês por departamento";
+
+export const PLANS = [
+  {
+    id: "departamento",
+    name: "Departamento",
+    price: "R$ 3.000",
+    period: "/mês",
+    quota: "1 departamento",
+    featured: false,
+    includes: [
+      "Grupo no WhatsApp",
+      "1 departamento à sua escolha",
+      "1 demanda ativa por vez",
+      "Fila o mês todo",
+      "Pausa ou cancela quando quiser",
+    ],
+  },
+  {
+    id: "dupla",
+    name: "Dupla",
+    price: "R$ 5.000",
+    period: "/mês",
+    quota: "2 departamentos",
+    featured: false,
+    includes: [
+      "Grupo no WhatsApp",
+      "2 departamentos à sua escolha",
+      "1 demanda ativa por vez",
+      "Fila o mês todo nos dois",
+      "Pausa ou cancela quando quiser",
+    ],
+  },
+  {
+    id: "ilimitado",
+    name: "Ilimitado",
+    price: "R$ 7.000",
+    period: "/mês",
+    quota: "Todos os departamentos",
+    featured: true,
+    includes: [
+      "Grupo no WhatsApp",
+      "Todos os departamentos",
+      "2 demandas em paralelo",
+      "Fila o mês todo",
+      "Pausa ou cancela quando quiser",
+    ],
   },
 ] as const;
 
 export const STEPS = [
   {
     n: "01",
-    title: "Contrata o plano",
-    body: "Start, Produção ou Empresa. Mensal, cancela quando quiser.",
+    title: "Escolhe o plano",
+    body: "Um departamento, dois, ou todos. Mensal. Pausa ou cancela quando quiser.",
   },
   {
     n: "02",
-    title: "Entra no grupo",
-    body: "A gente abre um WhatsApp só da sua empresa, no mesmo dia.",
+    title: "Entra no WhatsApp",
+    body: "A gente abre o grupo. É por ali que o trabalho entra e sai.",
   },
   {
     n: "03",
-    title: "Manda. A gente faz.",
-    body: "Cada pedido no grupo é uma solicitação. Entrega no ar, dentro do plano.",
-  },
-] as const;
-
-export const PLANS = [
-  {
-    id: "start",
-    name: "Start",
-    price: "R$ 4.900",
-    period: "/mês",
-    quota: "8 solicitações",
-    who: "Para começar a automatizar",
-    featured: false,
-    includes: [
-      "Grupo no WhatsApp",
-      "8 solicitações por mês",
-      "1 demanda por vez",
-      "IA, automação, vibe coding ou Claude Code",
-      "Prazo: até 3 dias úteis",
-    ],
-  },
-  {
-    id: "producao",
-    name: "Produção",
-    price: "R$ 9.900",
-    period: "/mês",
-    quota: "20 solicitações",
-    who: "Operação no automático",
-    featured: true,
-    includes: [
-      "Grupo no WhatsApp",
-      "20 solicitações por mês",
-      "2 demandas em paralelo",
-      "Todas as frentes",
-      "Prazo: até 2 dias úteis",
-    ],
-  },
-  {
-    id: "empresa",
-    name: "Empresa",
-    price: "R$ 19.900",
-    period: "/mês",
-    quota: "Fila contínua",
-    who: "Manda à vontade, a gente fila",
-    featured: false,
-    includes: [
-      "Grupo no WhatsApp + call quinzenal",
-      "Solicitações ilimitadas, 2 em paralelo",
-      "Prioridade na fila",
-      "Conselho de IA incluso",
-      "Prazo: até 1 dia útil",
-    ],
-  },
-] as const;
-
-export const PLAN_NOTES = [
-  {
-    q: "O que conta como 1 solicitação?",
-    a: "Um pedido, uma entrega. Trocar um fluxo, subir uma página, criar um agente, ligar um CRM. Se for maior que um dia de trabalho, a gente quebra em partes — e cada parte conta.",
-  },
-  {
-    q: "Por que não vender hora?",
-    a: "Hora obriga o cliente a adivinhar esforço. Solicitação é o que entra no WhatsApp: você manda, a gente entrega. Mais fácil de comprar e de operar.",
-  },
-  {
-    q: "Sobra no fim do mês?",
-    a: "Não acumula. O plano é capacidade do mês, não banco de horas. Pausa ou cancela quando quiser.",
+    title: "Manda a demanda",
+    body: "Uma ativa por vez. Quando fecha, puxa a próxima da fila.",
   },
 ] as const;

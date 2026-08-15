@@ -1,8 +1,8 @@
-# Agência de IA
+# nohumans
 
 Site da [agenciadeia.tech](https://agenciadeia.tech).
 
-Práticas: Agência de IA, Claude Code, vibe coding, marketing com IA e automação.
+Práticas: IA, Claude Code, vibe coding, marketing com IA e automação.
 
 ```bash
 npm install

@@ -9,7 +9,7 @@ export function HowItWorks() {
           Como funciona
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-          Contrata. Grupo no WhatsApp. Manda o que precisa.
+          Grupo, fila, o mês todo.
         </h2>
         <ol className="mt-12 grid gap-8 sm:grid-cols-3">
           {STEPS.map((step) => (
