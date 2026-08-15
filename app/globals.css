@@ -1,72 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #16110d;
-  --paper: #f3eadc;
-  --paper-muted: #e6d8c4;
-  --rule: #c9b79a;
-  --rule-strong: #8a7358;
-  --muted: #7a6854;
-  --terracotta: #c45c26;
-  --terracotta-deep: #9a3f14;
+  --background: #0c0a09;
+  --surface: #14110f;
+  --surface-hover: #1c1814;
+  --border: #2a2420;
+  --border-strong: #3d342c;
+  --foreground: #f4f0ea;
+  --muted: #a89a8c;
+  --subtle: #6e6258;
+  --copper: #c56a45;
+  --copper-deep: #9a4a2e;
+  --glow: #452a1e;
 }
 
 @theme inline {
-  --color-ink: var(--ink);
-  --color-paper: var(--paper);
-  --color-paper-muted: var(--paper-muted);
-  --color-rule: var(--rule);
-  --color-rule-strong: var(--rule-strong);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
   --color-muted: var(--muted);
-  --color-terracotta: var(--terracotta);
-  --color-terracotta-deep: var(--terracotta-deep);
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-outfit);
+  --color-subtle: var(--subtle);
+  --color-copper: var(--copper);
+  --color-copper-deep: var(--copper-deep);
+  --font-sans: var(--font-instrument);
   --font-mono: var(--font-ibm);
 }
 
 * {
-  border-color: var(--rule);
+  border-color: var(--border);
 }
 
 html {
-  background: var(--ink);
+  background: var(--background);
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--font-outfit), system-ui, sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-instrument), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--terracotta);
-  color: var(--paper);
+  background: var(--copper);
+  color: var(--foreground);
 }
 
-.grain {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.glow-hero {
+  background:
+    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(197, 106, 69, 0.28) 0%, transparent 58%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(69, 42, 30, 0.55) 0%, transparent 70%),
+    var(--background);
 }
 
 .display {
-  font-family: var(--font-fraunces), Georgia, serif;
-  font-optical-sizing: auto;
+  letter-spacing: -0.045em;
 }
 
-.mono {
+.kicker {
   font-family: var(--font-ibm), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
@@ -86,7 +91,16 @@ body {
   opacity: 0.78;
 }
 
+.scroll-hint {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .rise {
     animation: none;
   }
