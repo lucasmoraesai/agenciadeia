@@ -1,9 +1,9 @@
 import { SITE_NAME } from "@/lib/config";
 
 const LINKS = [
+  { href: "#como", label: "Como funciona" },
   { href: "#servicos", label: "Serviços" },
   { href: "#planos", label: "Planos" },
-  { href: "#contato", label: "Contato" },
 ];
 
 export function Nav() {

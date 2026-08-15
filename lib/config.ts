@@ -23,7 +23,7 @@ export const SERVICES = [
   {
     id: "vibe-coding",
     title: "Vibe Coding",
-    body: "Do brief ao deploy em semanas. Produto no ar — não demo que some.",
+    body: "Do brief ao deploy. Produto no ar — não demo que some.",
   },
   {
     id: "claude-code",
@@ -32,47 +32,86 @@ export const SERVICES = [
   },
 ] as const;
 
+export const STEPS = [
+  {
+    n: "01",
+    title: "Contrata o plano",
+    body: "Start, Produção ou Empresa. Mensal, cancela quando quiser.",
+  },
+  {
+    n: "02",
+    title: "Entra no grupo",
+    body: "A gente abre um WhatsApp só da sua empresa, no mesmo dia.",
+  },
+  {
+    n: "03",
+    title: "Manda. A gente faz.",
+    body: "Cada pedido no grupo é uma solicitação. Entrega no ar, dentro do plano.",
+  },
+] as const;
+
 export const PLANS = [
   {
     id: "start",
     name: "Start",
-    price: "Sob consulta",
-    period: "por projeto",
-    who: "Primeiro sistema em produção",
+    price: "R$ 4.900",
+    period: "/mês",
+    quota: "8 solicitações",
+    who: "Para começar a automatizar",
     featured: false,
     includes: [
-      "1 frente: IA, automação, vibe coding ou Claude Code",
-      "Sprint de 2 a 4 semanas",
-      "Entrega no ar, no seu stack",
-      "Handoff com o time",
+      "Grupo no WhatsApp",
+      "8 solicitações por mês",
+      "1 demanda por vez",
+      "IA, automação, vibe coding ou Claude Code",
+      "Prazo: até 3 dias úteis",
     ],
   },
   {
     id: "producao",
     name: "Produção",
-    price: "Sob consulta",
-    period: "por mês",
-    who: "Operação contínua",
+    price: "R$ 9.900",
+    period: "/mês",
+    quota: "20 solicitações",
+    who: "Operação no automático",
     featured: true,
     includes: [
-      "Automação + Claude Code no dia a dia",
-      "Iteração semanal no que já está no ar",
-      "Canal direto com a agência",
-      "Prioridade de correção e evolução",
+      "Grupo no WhatsApp",
+      "20 solicitações por mês",
+      "2 demandas em paralelo",
+      "Todas as frentes",
+      "Prazo: até 2 dias úteis",
     ],
   },
   {
     id: "empresa",
     name: "Empresa",
-    price: "Sob consulta",
-    period: "squad",
-    who: "Time dedicado na sua stack",
+    price: "R$ 19.900",
+    period: "/mês",
+    quota: "Fila contínua",
+    who: "Manda à vontade, a gente fila",
     featured: false,
     includes: [
-      "Todas as frentes sob uma direção",
-      "Squad alocado no seu repo",
+      "Grupo no WhatsApp + call quinzenal",
+      "Solicitações ilimitadas, 2 em paralelo",
+      "Prioridade na fila",
       "Conselho de IA incluso",
-      "SLA e cadência com C-level",
+      "Prazo: até 1 dia útil",
     ],
+  },
+] as const;
+
+export const PLAN_NOTES = [
+  {
+    q: "O que conta como 1 solicitação?",
+    a: "Um pedido, uma entrega. Trocar um fluxo, subir uma página, criar um agente, ligar um CRM. Se for maior que um dia de trabalho, a gente quebra em partes — e cada parte conta.",
+  },
+  {
+    q: "Por que não vender hora?",
+    a: "Hora obriga o cliente a adivinhar esforço. Solicitação é o que entra no WhatsApp: você manda, a gente entrega. Mais fácil de comprar e de operar.",
+  },
+  {
+    q: "Sobra no fim do mês?",
+    a: "Não acumula. O plano é capacidade do mês, não banco de horas. Pausa ou cancela quando quiser.",
   },
 ] as const;

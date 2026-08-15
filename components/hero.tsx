@@ -14,7 +14,8 @@ export function Hero() {
           className="rise mt-7 max-w-xl text-xl text-muted"
           style={{ animationDelay: "80ms" }}
         >
-          Automatize sua empresa.
+          Automatize sua empresa. Contrata o plano, a gente abre um grupo no
+          WhatsApp — o que você pedir, a gente faz.
         </p>
         <div
           className="rise mt-10 flex flex-wrap gap-3"

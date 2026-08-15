@@ -9,7 +9,7 @@ export function Contact() {
           Contato
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-xl text-3xl font-semibold sm:text-4xl">
-          Pronto para automatizar?
+          Contrata. A gente abre o grupo.
         </h2>
         <a
           href={`mailto:${EMAIL}`}

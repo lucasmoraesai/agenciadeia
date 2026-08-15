@@ -1,4 +1,4 @@
-import { EMAIL, PLANS } from "@/lib/config";
+import { EMAIL, PLAN_NOTES, PLANS } from "@/lib/config";
 import { Container } from "./container";
 
 export function Plans() {
@@ -9,8 +9,12 @@ export function Plans() {
           Planos
         </p>
         <h2 className="tracking-tighter-display mt-3 text-3xl font-semibold sm:text-4xl">
-          Do primeiro deploy à operação contínua.
+          Você manda no grupo. A gente entrega.
         </h2>
+        <p className="mt-4 max-w-xl text-muted">
+          Planos por solicitação — não por hora. Cada pedido no WhatsApp é uma
+          entrega, com teto claro no mês.
+        </p>
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {PLANS.map((plan) => (
             <article
@@ -31,7 +35,9 @@ export function Plans() {
                 {plan.who}
               </p>
               <p className="mt-6 text-3xl font-semibold tracking-tight">{plan.price}</p>
-              <p className="mt-1 text-sm text-subtle">{plan.period}</p>
+              <p className="mt-1 text-sm text-subtle">
+                {plan.period} · {plan.quota}
+              </p>
               <ul className="mt-7 flex-1 space-y-3 border-t border-border pt-6">
                 {plan.includes.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-muted">
@@ -41,18 +47,26 @@ export function Plans() {
                 ))}
               </ul>
               <a
-                href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Plano ${plan.name}`)}`}
+                href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Quero o plano ${plan.name}`)}`}
                 className={`mt-8 flex items-center justify-center rounded-md px-4 py-2.5 text-sm font-medium transition-opacity hover:opacity-85 ${
                   plan.featured
                     ? "bg-foreground text-background"
                     : "border border-border-strong"
                 }`}
               >
-                Falar sobre {plan.name}
+                Contratar {plan.name}
               </a>
             </article>
           ))}
         </div>
+        <dl className="mt-16 grid gap-8 border-t border-border pt-12 sm:grid-cols-3">
+          {PLAN_NOTES.map((note) => (
+            <div key={note.q}>
+              <dt className="text-sm font-medium tracking-tight">{note.q}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-muted">{note.a}</dd>
+            </div>
+          ))}
+        </dl>
       </Container>
     </section>
   );
