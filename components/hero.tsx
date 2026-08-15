@@ -14,7 +14,7 @@ export function Hero() {
           className="rise mt-7 max-w-xl text-xl text-muted"
           style={{ animationDelay: "80ms" }}
         >
-          Tudo mensal. Por departamento.
+          Agência automatizada por IA.
         </p>
         <div
           className="rise mt-10 flex flex-wrap gap-3"

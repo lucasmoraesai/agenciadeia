@@ -18,14 +18,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Automatize sua empresa`,
+    default: `${SITE_NAME} — Agência automatizada por IA`,
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    "nohumans — agência de IA, automação, vibe coding e Claude Code. Automatize sua empresa.",
+    "nohumans — agência automatizada por IA. Automação, vibe coding e Claude Code.",
   openGraph: {
     title: SITE_NAME,
-    description: "Automatize sua empresa com IA, automação, vibe coding e Claude Code.",
+    description: "Agência automatizada por IA.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "pt_BR",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: SITE_NAME,
-    description: "Automatize sua empresa com IA, automação, vibe coding e Claude Code.",
+    description: "Agência automatizada por IA.",
   },
 };
 
