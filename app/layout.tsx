@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   },
   description:
     "nohumans — agência automatizada por IA. Automação, vibe coding e Claude Code.",
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: SITE_NAME,
     description: "Agência automatizada por IA.",

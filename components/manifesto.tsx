@@ -1,4 +1,5 @@
 import { Container } from "./container";
+import { Logo } from "./logo";
 
 const FIRINGS = [
   "Demita sua agência de marketing.",
@@ -16,7 +17,9 @@ export function Manifesto() {
         <p className="tracking-tighter-display mt-4 max-w-4xl text-4xl font-semibold leading-[1.08] text-muted sm:text-5xl lg:text-[64px]">
           Chegou a sua agência de IA.
         </p>
-        <p className="mt-10 text-sm font-medium tracking-tight">nohumans</p>
+        <div className="mt-10">
+          <Logo markClassName="h-6 w-6" />
+        </div>
       </Container>
     </section>
   );

@@ -1,5 +1,5 @@
-import { SITE_NAME } from "@/lib/config";
 import { whatsappHref } from "@/lib/whatsapp";
+import { Logo } from "./logo";
 
 const LINKS = [
   { href: "#como", label: "Como funciona" },
@@ -11,8 +11,8 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-14 max-w-[1080px] items-center justify-between px-6">
-        <a href="/" className="text-sm font-medium tracking-tight">
-          {SITE_NAME}
+        <a href="/" className="transition-opacity hover:opacity-85">
+          <Logo />
         </a>
         <nav className="hidden items-center gap-7 md:flex">
           {LINKS.map((link) => (

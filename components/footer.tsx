@@ -1,12 +1,13 @@
-import { SITE_NAME, WHATSAPP_DISPLAY } from "@/lib/config";
+import { WHATSAPP_DISPLAY } from "@/lib/config";
 import { whatsappHref } from "@/lib/whatsapp";
 import { Container } from "./container";
+import { Logo } from "./logo";
 
 export function Footer() {
   return (
     <footer className="py-8">
       <Container className="flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-subtle">{SITE_NAME}</p>
+        <Logo className="text-subtle" />
         <a
           href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
           target="_blank"

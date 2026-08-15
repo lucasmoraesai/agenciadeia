@@ -81,17 +81,19 @@ export const AVULSO_PERIOD = "/mês por departamento";
 
 export const PLANS = [
   {
-    id: "dupla",
-    name: "Dupla",
-    price: "R$ 5.000",
+    id: "departamento",
+    name: "Por departamento",
+    price: "R$ 3.000",
     period: "/mês",
-    quota: "2 departamentos",
+    quota: "1 departamento",
     featured: false,
+    href: "#avulsos",
+    cta: "Escolher departamento",
     includes: [
       "Kickoff após o pagamento",
       "Grupo no WhatsApp",
-      "2 departamentos à sua escolha",
-      "Reunião quinzenal",
+      "1 departamento à sua escolha",
+      "Reunião mensal",
       "CS dedicado",
       "Suporte VIP",
       "Horas ilimitadas, 1 demanda, prazo 48h",
@@ -100,10 +102,12 @@ export const PLANS = [
   {
     id: "ilimitado",
     name: "Ilimitado",
-    price: "R$ 7.000",
+    price: "R$ 6.000",
     period: "/mês",
     quota: "Todos os departamentos",
     featured: true,
+    href: null,
+    cta: "Assinar Ilimitado",
     includes: [
       "Kickoff após o pagamento",
       "Grupo no WhatsApp",
@@ -135,6 +139,6 @@ export const STEPS = [
   {
     n: "04",
     title: "Entregamos",
-    body: "Prazo de até 48h. Reunião semanal, quinzenal ou mensal, conforme o plano.",
+    body: "Prazo de até 48h. Reunião mensal no departamento, semanal no Ilimitado.",
   },
 ] as const;
