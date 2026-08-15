@@ -2,7 +2,7 @@ import { Container } from "./container";
 
 const FIRINGS = [
   "Demita sua agência de marketing.",
-  "Demita seu vendedor ruim.",
+  "Demita seu SDR ruim.",
   "Demita seu programador lento.",
 ];
 
