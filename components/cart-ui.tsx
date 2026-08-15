@@ -84,16 +84,12 @@ export function CartUi() {
             >
               Ver carrinho
             </button>
-            <button
-              type="button"
-              onClick={() => {
-                setOpen(false);
-                setProposal(true);
-              }}
+            <a
+              href="/checkout/"
               className="rounded-md bg-foreground px-3 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
             >
-              Gerar proposta
-            </button>
+              Checkout
+            </a>
           </div>
         </div>
       </div>
@@ -155,13 +151,19 @@ export function CartUi() {
                 <span className="text-muted">Total mensal</span>
                 <span className="font-medium">{formatBRL(total)}</span>
               </div>
+              <a
+                href="/checkout/"
+                className="mt-4 flex w-full items-center justify-center rounded-md bg-foreground py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+              >
+                Ir para o checkout
+              </a>
               <button
                 type="button"
                 onClick={() => {
                   setOpen(false);
                   setProposal(true);
                 }}
-                className="mt-4 w-full rounded-md bg-foreground py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+                className="mt-3 w-full text-center text-sm text-muted transition-opacity hover:opacity-80"
               >
                 Gerar proposta comercial
               </button>
@@ -241,10 +243,16 @@ export function CartUi() {
             </p>
             <div className="proposal-actions mt-8 flex flex-wrap gap-3">
               <a
+                href="/checkout/"
+                className="rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+              >
+                Ir para o checkout
+              </a>
+              <a
                 href={whatsappHref(proposalText)}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+                className="rounded-md border border-border-strong px-4 py-2.5 text-sm transition-colors hover:bg-surface-hover"
               >
                 Enviar no WhatsApp
               </a>

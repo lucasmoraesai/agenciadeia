@@ -78,6 +78,7 @@ export const AVULSOS = [
 export const AVULSO_PRICE = "R$ 3.000";
 export const AVULSO_AMOUNT = 3000;
 export const AVULSO_PERIOD = "/mês por departamento";
+export const ILIMITADO_AMOUNT = 6000;
 
 export const PLANS = [
   {
@@ -106,7 +107,7 @@ export const PLANS = [
     period: "/mês",
     quota: "Todos os departamentos",
     featured: true,
-    href: null,
+    href: "/checkout/?plan=ilimitado",
     cta: "Assinar Ilimitado",
     includes: [
       "Kickoff após o pagamento",
@@ -119,6 +120,20 @@ export const PLANS = [
     ],
   },
 ] as const;
+
+/**
+ * Chaves de RECEBER do Nubank (nunca seed / senha / private key).
+ * - PIX: chave aleatória
+ * - BTC / ETH: endereço de depósito do Nubank Cripto
+ */
+export const PAYMENT = {
+  pixKey: "cead9a0f-04b2-42f7-a80b-be7674ec8671",
+  pixName: "Lucas Moraes",
+  /** Cidade do recebedor no BR Code PIX (máx. 15 chars, sem acento). */
+  pixCity: "SAO PAULO",
+  btcAddress: "bc1q98zg40swsnhvrgalwezswzrfj88qtgjq7km0c6",
+  ethAddress: "0x7F8379cb62fB9C6DB9dCBc0716D4976665e80628",
+};
 
 export const STEPS = [
   {

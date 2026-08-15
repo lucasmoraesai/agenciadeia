@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
   type ReactNode,
@@ -18,16 +19,46 @@ type CartContextValue = {
   ids: DepartmentId[];
   items: CartItem[];
   total: number;
+  ready: boolean;
   has: (id: DepartmentId) => boolean;
   toggle: (id: DepartmentId) => void;
   remove: (id: DepartmentId) => void;
   clear: () => void;
 };
 
+const STORAGE_KEY = "nohumans-cart";
 const CartContext = createContext<CartContextValue | null>(null);
+
+function isDepartmentId(value: string): value is DepartmentId {
+  return AVULSOS.some((item) => item.id === value);
+}
+
+function readStoredIds(): DepartmentId[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = window.sessionStorage.getItem(STORAGE_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw) as unknown;
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((id): id is DepartmentId => typeof id === "string" && isDepartmentId(id));
+  } catch {
+    return [];
+  }
+}
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const [ids, setIds] = useState<DepartmentId[]>([]);
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setIds(readStoredIds());
+    setReady(true);
+  }, []);
+
+  useEffect(() => {
+    if (!ready) return;
+    window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
+  }, [ids, ready]);
 
   const toggle = useCallback((id: DepartmentId) => {
     setIds((current) =>
@@ -47,12 +78,13 @@ export function CartProvider({ children }: { children: ReactNode }) {
       ids,
       items,
       total: items.length * AVULSO_AMOUNT,
+      ready,
       has: (id) => ids.includes(id),
       toggle,
       remove,
       clear,
     };
-  }, [ids, toggle, remove, clear]);
+  }, [ids, ready, toggle, remove, clear]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
