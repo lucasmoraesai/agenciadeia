@@ -1,6 +1,5 @@
 import { Container } from "./container";
 import { RotatingWord } from "./rotating-word";
-import { whatsappHref } from "@/lib/whatsapp";
 
 export function Hero() {
   return (
@@ -22,18 +21,16 @@ export function Hero() {
           style={{ animationDelay: "140ms" }}
         >
           <a
-            href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
-            target="_blank"
-            rel="noreferrer"
+            href="#planos"
             className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
           >
-            WhatsApp
+            Ver planos
           </a>
           <a
-            href="#avulsos"
+            href="/checkout/?plan=ilimitado"
             className="rounded-md border border-border-strong px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
-            Departamentos
+            Assinar Ilimitado
           </a>
         </div>
       </Container>
