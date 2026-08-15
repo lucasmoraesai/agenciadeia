@@ -1,4 +1,5 @@
 import { whatsappHref } from "@/lib/whatsapp";
+import { CartButton } from "./cart-ui";
 import { Logo } from "./logo";
 
 const LINKS = [
@@ -25,14 +26,17 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
-          target="_blank"
-          rel="noreferrer"
-          className="rounded-md bg-foreground px-3.5 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
-        >
-          WhatsApp
-        </a>
+        <div className="flex items-center gap-2.5">
+          <CartButton />
+          <a
+            href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-md bg-foreground px-3.5 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+          >
+            WhatsApp
+          </a>
+        </div>
       </div>
     </header>
   );

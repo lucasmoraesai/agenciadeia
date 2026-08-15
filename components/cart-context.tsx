@@ -20,10 +20,13 @@ type CartContextValue = {
   items: CartItem[];
   total: number;
   ready: boolean;
+  drawerOpen: boolean;
   has: (id: DepartmentId) => boolean;
   toggle: (id: DepartmentId) => void;
   remove: (id: DepartmentId) => void;
   clear: () => void;
+  openDrawer: () => void;
+  closeDrawer: () => void;
 };
 
 const STORAGE_KEY = "nohumans-cart";
@@ -40,7 +43,9 @@ function readStoredIds(): DepartmentId[] {
     if (!raw) return [];
     const parsed = JSON.parse(raw) as unknown;
     if (!Array.isArray(parsed)) return [];
-    return parsed.filter((id): id is DepartmentId => typeof id === "string" && isDepartmentId(id));
+    return parsed.filter(
+      (id): id is DepartmentId => typeof id === "string" && isDepartmentId(id),
+    );
   } catch {
     return [];
   }
@@ -49,6 +54,7 @@ function readStoredIds(): DepartmentId[] {
 export function CartProvider({ children }: { children: ReactNode }) {
   const [ids, setIds] = useState<DepartmentId[]>([]);
   const [ready, setReady] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   useEffect(() => {
     setIds(readStoredIds());
@@ -60,17 +66,27 @@ export function CartProvider({ children }: { children: ReactNode }) {
     window.sessionStorage.setItem(STORAGE_KEY, JSON.stringify(ids));
   }, [ids, ready]);
 
+  const openDrawer = useCallback(() => setDrawerOpen(true), []);
+  const closeDrawer = useCallback(() => setDrawerOpen(false), []);
+
   const toggle = useCallback((id: DepartmentId) => {
-    setIds((current) =>
-      current.includes(id) ? current.filter((item) => item !== id) : [...current, id],
-    );
+    setIds((current) => {
+      if (current.includes(id)) {
+        return current.filter((item) => item !== id);
+      }
+      setDrawerOpen(true);
+      return [...current, id];
+    });
   }, []);
 
   const remove = useCallback((id: DepartmentId) => {
     setIds((current) => current.filter((item) => item !== id));
   }, []);
 
-  const clear = useCallback(() => setIds([]), []);
+  const clear = useCallback(() => {
+    setIds([]);
+    setDrawerOpen(false);
+  }, []);
 
   const value = useMemo<CartContextValue>(() => {
     const items = AVULSOS.filter((item) => ids.includes(item.id));
@@ -79,12 +95,15 @@ export function CartProvider({ children }: { children: ReactNode }) {
       items,
       total: items.length * AVULSO_AMOUNT,
       ready,
+      drawerOpen,
       has: (id) => ids.includes(id),
       toggle,
       remove,
       clear,
+      openDrawer,
+      closeDrawer,
     };
-  }, [ids, ready, toggle, remove, clear]);
+  }, [ids, ready, drawerOpen, toggle, remove, clear, openDrawer, closeDrawer]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
