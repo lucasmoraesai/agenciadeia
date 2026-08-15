@@ -1,43 +1,34 @@
 import { SITE_NAME } from "@/lib/config";
 
 const LINKS = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#praticas", label: "Frentes" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#planos", label: "Planos" },
   { href: "#contato", label: "Contato" },
 ];
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-40 bg-background/70 backdrop-blur-xl">
-      <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-6">
-        <a href="/" className="fade-hover flex items-center gap-2.5 text-sm font-medium tracking-tight">
-          <span className="grid h-4 w-4 grid-cols-2 gap-px" aria-hidden="true">
-            <span className="bg-foreground" />
-            <span className="bg-copper" />
-            <span className="bg-copper" />
-            <span className="bg-foreground" />
-          </span>
+    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+      <div className="mx-auto flex h-14 max-w-[1080px] items-center justify-between px-6">
+        <a href="/" className="text-sm font-medium tracking-tight">
           {SITE_NAME}
         </a>
-
-        <nav className="hidden items-center gap-8 md:flex">
+        <nav className="hidden items-center gap-7 md:flex">
           {LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="kicker text-muted fade-hover"
+              className="text-sm text-muted transition-opacity hover:opacity-80"
             >
               {link.label}
             </a>
           ))}
         </nav>
-
         <a
-          href="#contato"
-          className="kicker rounded-full border border-border-strong px-4 py-2 text-foreground fade-hover"
+          href="#planos"
+          className="rounded-md bg-foreground px-3.5 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
         >
-          <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-copper" />
-          Vamos falar
+          Ver planos
         </a>
       </div>
     </header>

@@ -1,17 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c0a09;
-  --surface: #14110f;
-  --surface-hover: #1c1814;
-  --border: #2a2420;
-  --border-strong: #3d342c;
-  --foreground: #f4f0ea;
-  --muted: #a89a8c;
-  --subtle: #6e6258;
-  --copper: #c56a45;
-  --copper-deep: #9a4a2e;
-  --glow: #452a1e;
+  --background: #000000;
+  --surface: #0a0a0a;
+  --surface-hover: #111111;
+  --border: #1f1f1f;
+  --border-strong: #2e2e2e;
+  --foreground: #ededed;
+  --muted: #a1a1a1;
+  --subtle: #6f6f6f;
 }
 
 @theme inline {
@@ -23,10 +20,8 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-subtle: var(--subtle);
-  --color-copper: var(--copper);
-  --color-copper-deep: var(--copper-deep);
-  --font-sans: var(--font-instrument);
-  --font-mono: var(--font-ibm);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 * {
@@ -34,38 +29,31 @@
 }
 
 html {
-  background: var(--background);
   scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-instrument), system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--copper);
-  color: var(--foreground);
+  background: var(--foreground);
+  color: var(--background);
 }
 
-.glow-hero {
-  background:
-    radial-gradient(ellipse 70% 55% at 50% -10%, rgba(197, 106, 69, 0.28) 0%, transparent 58%),
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(69, 42, 30, 0.55) 0%, transparent 70%),
-    var(--background);
-}
-
-.display {
+.tracking-tighter-display {
   letter-spacing: -0.045em;
 }
 
-.kicker {
-  font-family: var(--font-ibm), ui-monospace, monospace;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+.grid-backdrop {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 20%, transparent 75%);
 }
 
 @keyframes rise {
@@ -83,17 +71,10 @@ body {
   animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.fade-hover {
-  transition: opacity 180ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.fade-hover:hover {
-  opacity: 0.78;
-}
-
-.scroll-hint {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+.word-swap {
+  transition:
+    opacity 280ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -105,7 +86,7 @@ body {
     animation: none;
   }
 
-  .fade-hover {
+  .word-swap {
     transition: none;
   }
 }

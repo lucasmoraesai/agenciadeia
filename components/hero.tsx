@@ -1,37 +1,39 @@
 import { Container } from "./container";
+import { RotatingWord } from "./rotating-word";
 
 export function Hero() {
   return (
-    <section className="glow-hero relative min-h-[88vh] overflow-hidden">
-      <Container className="relative flex min-h-[88vh] flex-col justify-end pb-20 pt-28">
-        <p className="rise kicker text-muted">
-          <span className="mr-2 inline-block h-1.5 w-1.5 rounded-full bg-copper align-middle" />
-          Brasil · Agência de IA
-        </p>
-        <h1 className="rise display mt-6 max-w-4xl text-5xl font-semibold leading-[0.98] sm:text-7xl lg:text-[88px]">
-          IA tem
-          <br />
-          <span className="text-copper">arquitetura.</span>
+    <section className="relative overflow-hidden border-b border-border">
+      <div className="grid-backdrop pointer-events-none absolute inset-0" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[860px] -translate-x-1/2 rounded-full bg-white/[0.05] blur-[120px]" />
+      <Container className="relative py-28 sm:py-36">
+        <h1 className="rise tracking-tighter-display max-w-4xl text-5xl font-semibold leading-[1.02] sm:text-7xl lg:text-[84px]">
+          Agência de <RotatingWord />
         </h1>
         <p
-          className="rise mt-8 max-w-xl text-lg leading-relaxed text-muted"
+          className="rise mt-7 max-w-xl text-xl text-muted"
           style={{ animationDelay: "80ms" }}
         >
-          Claude Code, vibe coding, marketing e automação rodando como um
-          sistema só. A gente lê o negócio antes de escrever código.
+          Automatize sua empresa.
         </p>
-        <a
-          className="rise mt-10 inline-flex w-fit items-center text-sm text-foreground fade-hover"
-          href="#praticas"
+        <div
+          className="rise mt-10 flex flex-wrap gap-3"
           style={{ animationDelay: "140ms" }}
         >
-          Ver as cinco frentes →
-        </a>
+          <a
+            href="#servicos"
+            className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+          >
+            Ver serviços
+          </a>
+          <a
+            href="#planos"
+            className="rounded-md border border-border-strong px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-hover"
+          >
+            Ver planos
+          </a>
+        </div>
       </Container>
-      <div className="pointer-events-none absolute right-6 top-1/2 hidden -translate-y-1/2 flex-col items-center lg:flex">
-        <span className="scroll-hint kicker text-subtle">Scroll</span>
-        <span className="mt-3 h-14 w-px bg-border-strong" />
-      </div>
     </section>
   );
 }

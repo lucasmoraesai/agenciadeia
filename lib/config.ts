@@ -7,53 +7,72 @@ export const INSTAGRAM_HANDLE = "@lucasmoraes.ai";
 export const LINKEDIN = "https://www.linkedin.com/in/lucasmoraesai/";
 export const PHOTO_PROFILE = "/photos/perfil.jpg";
 
-export const PRACTICES = [
+export const HERO_WORDS = ["IA", "Automação", "Vibe Coding", "Claude Code"] as const;
+
+export const SERVICES = [
   {
     id: "ia",
-    title: "Agência de IA",
-    lead: "Estratégia e sistemas que entram no dia a dia.",
-    body: "Agentes, copilots e operação em produção — não em piloto. Do diagnóstico à entrega que o time usa de verdade.",
-  },
-  {
-    id: "claude-code",
-    title: "Claude Code",
-    lead: "Times que constroem software com Claude.",
-    body: "Repos, skills, agentes e pipelines. O ateliê de engenharia para o time shippar com Claude, não só conversar com ele.",
-  },
-  {
-    id: "vibe-coding",
-    title: "Vibe Coding",
-    lead: "Do brief ao deploy, com IA no teclado.",
-    body: "Prototipar, iterar e publicar produto em semanas. Código que sobe — não demo que some.",
-  },
-  {
-    id: "marketing",
-    title: "Marketing com IA",
-    lead: "Conteúdo, campanha e operação de mídia.",
-    body: "Volume sem perder voz. Agentes para pesquisa, copy, criativos e rotina de canais — humano no fechamento.",
+    title: "IA",
+    body: "Agentes, copilots e operação que o time usa no dia seguinte. Produção, não piloto.",
   },
   {
     id: "automacao",
     title: "Automação",
-    lead: "Workflows que rodam sozinhos.",
-    body: "Integrações, follow-up, CRM, relatórios e operações internas. Menos clique repetido, mais decisão.",
+    body: "Workflows, CRM, follow-up e relatórios rodando sozinhos. Menos clique, mais decisão.",
+  },
+  {
+    id: "vibe-coding",
+    title: "Vibe Coding",
+    body: "Do brief ao deploy em semanas. Produto no ar — não demo que some.",
+  },
+  {
+    id: "claude-code",
+    title: "Claude Code",
+    body: "Repos, skills e pipelines para o time shippar com Claude, não só conversar com ele.",
   },
 ] as const;
 
-export const PILLARS = [
+export const PLANS = [
   {
-    kicker: "O que somos",
-    title: "Uma agência de IA construída em volta da máquina de entrega.",
-    body: "Claude Code e vibe coding no núcleo. Em volta: marketing, automação e operação, para cada real virar demanda e software que sobe.",
+    id: "start",
+    name: "Start",
+    price: "Sob consulta",
+    period: "por projeto",
+    who: "Primeiro sistema em produção",
+    featured: false,
+    includes: [
+      "1 frente: IA, automação, vibe coding ou Claude Code",
+      "Sprint de 2 a 4 semanas",
+      "Entrega no ar, no seu stack",
+      "Handoff com o time",
+    ],
   },
   {
-    kicker: "O que fazemos",
-    title: "Transformamos atenção em produto e orçamento em sistema.",
-    body: "Cada frente assenta num ângulo, numa oferta e num dado — e no que acontece depois do clique: captura, follow-up e close.",
+    id: "producao",
+    name: "Produção",
+    price: "Sob consulta",
+    period: "por mês",
+    who: "Operação contínua",
+    featured: true,
+    includes: [
+      "Automação + Claude Code no dia a dia",
+      "Iteração semanal no que já está no ar",
+      "Canal direto com a agência",
+      "Prioridade de correção e evolução",
+    ],
   },
   {
-    kicker: "O que nos diferencia",
-    title: "Onde outros entregam campanha ou demo, a gente entrega o sistema.",
-    body: "Produção lida com lente de negócio e automação operacional, sob uma direção só.",
+    id: "empresa",
+    name: "Empresa",
+    price: "Sob consulta",
+    period: "squad",
+    who: "Time dedicado na sua stack",
+    featured: false,
+    includes: [
+      "Todas as frentes sob uma direção",
+      "Squad alocado no seu repo",
+      "Conselho de IA incluso",
+      "SLA e cadência com C-level",
+    ],
   },
 ] as const;
