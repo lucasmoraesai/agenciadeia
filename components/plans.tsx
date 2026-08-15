@@ -1,4 +1,5 @@
-import { EMAIL, PLANS } from "@/lib/config";
+import { PLANS } from "@/lib/config";
+import { whatsappHref } from "@/lib/whatsapp";
 import { Container } from "./container";
 
 export function Plans() {
@@ -9,10 +10,10 @@ export function Plans() {
           Planos
         </p>
         <h2 className="tracking-tighter-display mt-3 text-3xl font-semibold sm:text-4xl">
-          Mensal, no WhatsApp.
+          Horas ilimitadas, 1 demanda por vez.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Uma demanda ativa por vez. Sem hora e sem ticket.
+          Kickoff depois do pagamento. CS dedicado e suporte VIP.
         </p>
         <div className="mt-14 grid gap-5 lg:grid-cols-3">
           {PLANS.map((plan) => (
@@ -43,7 +44,9 @@ export function Plans() {
                 ))}
               </ul>
               <a
-                href={`mailto:${EMAIL}?subject=${encodeURIComponent(`Plano ${plan.name}`)}`}
+                href={whatsappHref(`Quero o plano ${plan.name} (${plan.price}${plan.period}).`)}
+                target="_blank"
+                rel="noreferrer"
                 className={`mt-8 flex items-center justify-center rounded-md px-4 py-2.5 text-sm font-medium transition-opacity hover:opacity-85 ${
                   plan.featured
                     ? "bg-foreground text-background"

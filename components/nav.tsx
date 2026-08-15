@@ -1,4 +1,5 @@
 import { SITE_NAME } from "@/lib/config";
+import { whatsappHref } from "@/lib/whatsapp";
 
 const LINKS = [
   { href: "#como", label: "Como funciona" },
@@ -25,10 +26,12 @@ export function Nav() {
           ))}
         </nav>
         <a
-          href="#planos"
+          href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
+          target="_blank"
+          rel="noreferrer"
           className="rounded-md bg-foreground px-3.5 py-1.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
         >
-          Ver planos
+          WhatsApp
         </a>
       </div>
     </header>

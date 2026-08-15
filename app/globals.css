@@ -90,3 +90,30 @@ body {
     transition: none;
   }
 }
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .proposal-sheet,
+  .proposal-sheet * {
+    visibility: visible;
+  }
+
+  .proposal-sheet {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    max-width: none;
+    border: 0;
+    border-radius: 0;
+    background: #fff;
+    color: #111;
+    box-shadow: none;
+  }
+
+  .proposal-actions {
+    display: none;
+  }
+}

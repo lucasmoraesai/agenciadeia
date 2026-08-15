@@ -95,6 +95,18 @@ const ICONS: Record<string, (props: IconProps) => ReactNode> = {
       <path d="M5 14v4c0 1.4 3.1 2.5 7 2.5s7-1.1 7-2.5v-4" />
     </IconFrame>
   ),
+  compras: (props) => (
+    <IconFrame {...props}>
+      <path d="M6 7h15l-1.4 8.2a2 2 0 0 1-2 1.8H9.2a2 2 0 0 1-2-1.6L5.2 4H3" />
+      <circle cx="9" cy="20" r="1.2" />
+      <circle cx="18" cy="20" r="1.2" />
+    </IconFrame>
+  ),
+  sucesso: (props) => (
+    <IconFrame {...props}>
+      <path d="M12 21s-7-4.4-7-10a4.5 4.5 0 0 1 7-3.7A4.5 4.5 0 0 1 19 11c0 5.6-7 10-7 10Z" />
+    </IconFrame>
+  ),
 };
 
 export function DepartmentIcon({ id, className }: { id: string; className?: string }) {

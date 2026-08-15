@@ -2,6 +2,9 @@ export const SITE_URL = "https://agenciadeia.tech";
 export const SITE_NAME = "nohumans";
 
 export const EMAIL = "contato@lucasmoraes.ai";
+export const WHATSAPP = "5511983507618";
+export const WHATSAPP_DISPLAY = "+55 11 98350-7618";
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP}`;
 export const INSTAGRAM = "https://www.instagram.com/lucasmoraes.ai/";
 export const INSTAGRAM_HANDLE = "@lucasmoraes.ai";
 export const LINKEDIN = "https://www.linkedin.com/in/lucasmoraesai/";
@@ -60,9 +63,20 @@ export const AVULSOS = [
     title: "Dados",
     body: "Painel, extração, BI e relatório recorrente.",
   },
+  {
+    id: "compras",
+    title: "Compras",
+    body: "Cotação, fornecedor, pedido e follow-up.",
+  },
+  {
+    id: "sucesso",
+    title: "Sucesso do cliente",
+    body: "Onboarding, retenção, NPS e expansão.",
+  },
 ] as const;
 
 export const AVULSO_PRICE = "R$ 3.000";
+export const AVULSO_AMOUNT = 3000;
 export const AVULSO_PERIOD = "/mês por departamento";
 
 export const PLANS = [
@@ -74,11 +88,13 @@ export const PLANS = [
     quota: "1 departamento",
     featured: false,
     includes: [
+      "Kickoff após o pagamento",
       "Grupo no WhatsApp",
       "1 departamento à sua escolha",
-      "1 demanda ativa por vez",
-      "Fila o mês todo",
-      "Pausa ou cancela quando quiser",
+      "Reunião mensal",
+      "CS dedicado",
+      "Suporte VIP",
+      "Horas ilimitadas, 1 demanda, prazo 48h",
     ],
   },
   {
@@ -89,11 +105,13 @@ export const PLANS = [
     quota: "2 departamentos",
     featured: false,
     includes: [
+      "Kickoff após o pagamento",
       "Grupo no WhatsApp",
       "2 departamentos à sua escolha",
-      "1 demanda ativa por vez",
-      "Fila o mês todo nos dois",
-      "Pausa ou cancela quando quiser",
+      "Reunião quinzenal",
+      "CS dedicado",
+      "Suporte VIP",
+      "Horas ilimitadas, 1 demanda, prazo 48h",
     ],
   },
   {
@@ -104,11 +122,13 @@ export const PLANS = [
     quota: "Todos os departamentos",
     featured: true,
     includes: [
+      "Kickoff após o pagamento",
       "Grupo no WhatsApp",
       "Todos os departamentos",
-      "2 demandas em paralelo",
-      "Fila o mês todo",
-      "Pausa ou cancela quando quiser",
+      "Reunião semanal",
+      "CS dedicado",
+      "Suporte VIP",
+      "Horas ilimitadas, 1 demanda, prazo 48h",
     ],
   },
 ] as const;
@@ -116,17 +136,22 @@ export const PLANS = [
 export const STEPS = [
   {
     n: "01",
-    title: "Escolhe o plano",
-    body: "Um departamento, dois, ou todos. Mensal. Pausa ou cancela quando quiser.",
+    title: "Contrata",
+    body: "Plano ou avulso. Mensal. Pausa ou cancela quando quiser.",
   },
   {
     n: "02",
-    title: "Entra no WhatsApp",
-    body: "A gente abre o grupo. É por ali que o trabalho entra e sai.",
+    title: "Criamos o grupo",
+    body: "Depois do pagamento, kickoff: configuramos o WhatsApp e entendemos a demanda.",
   },
   {
     n: "03",
-    title: "Manda a demanda",
-    body: "Uma ativa por vez. Quando fecha, puxa a próxima da fila.",
+    title: "Você pede",
+    body: "Manda no grupo. Uma demanda ativa por vez. CS dedicado e suporte VIP.",
+  },
+  {
+    n: "04",
+    title: "Entregamos",
+    body: "Prazo de até 48h. Reunião semanal, quinzenal ou mensal, conforme o plano.",
   },
 ] as const;

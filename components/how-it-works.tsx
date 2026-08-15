@@ -9,9 +9,9 @@ export function HowItWorks() {
           Como funciona
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-          Grupo, fila, o mês todo.
+          Contrata. Criamos o grupo. Você pede. Entregamos.
         </h2>
-        <ol className="mt-12 grid gap-8 sm:grid-cols-3">
+        <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step) => (
             <li key={step.n}>
               <p className="font-mono text-[11px] text-subtle">{step.n}</p>
