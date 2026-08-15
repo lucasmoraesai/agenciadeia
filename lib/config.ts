@@ -81,23 +81,6 @@ export const AVULSO_PERIOD = "/mês por departamento";
 
 export const PLANS = [
   {
-    id: "departamento",
-    name: "Departamento",
-    price: "R$ 3.000",
-    period: "/mês",
-    quota: "1 departamento",
-    featured: false,
-    includes: [
-      "Kickoff após o pagamento",
-      "Grupo no WhatsApp",
-      "1 departamento à sua escolha",
-      "Reunião mensal",
-      "CS dedicado",
-      "Suporte VIP",
-      "Horas ilimitadas, 1 demanda, prazo 48h",
-    ],
-  },
-  {
     id: "dupla",
     name: "Dupla",
     price: "R$ 5.000",
@@ -137,7 +120,7 @@ export const STEPS = [
   {
     n: "01",
     title: "Contrata",
-    body: "Plano ou avulso. Mensal. Pausa ou cancela quando quiser.",
+    body: "Plano ou departamento. Mensal. Pausa ou cancela quando quiser.",
   },
   {
     n: "02",

@@ -12,13 +12,14 @@ export function Avulsos() {
     <section id="avulsos" className="border-b border-border py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
-          Avulsos
+          Departamentos
         </p>
         <h2 className="tracking-tighter-display mt-3 text-3xl font-semibold sm:text-4xl">
           Automatize cada departamento da sua empresa.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          R$ 3.000/mês cada. Kickoff após o pagamento, reunião mensal, CS dedicado e suporte VIP.
+          R$ 3.000/mês cada. Kickoff após o pagamento, reunião mensal, CS
+          dedicado e suporte VIP.
         </p>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {AVULSOS.map((item) => {

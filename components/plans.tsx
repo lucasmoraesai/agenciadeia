@@ -13,9 +13,9 @@ export function Plans() {
           Horas ilimitadas, 1 demanda por vez.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
-          Kickoff depois do pagamento. CS dedicado e suporte VIP.
+          Um departamento fica na lista abaixo. Aqui, pacotes de dois ou todos.
         </p>
-        <div className="mt-14 grid gap-5 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2">
           {PLANS.map((plan) => (
             <article
               key={plan.id}

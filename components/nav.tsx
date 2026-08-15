@@ -4,7 +4,7 @@ import { whatsappHref } from "@/lib/whatsapp";
 const LINKS = [
   { href: "#como", label: "Como funciona" },
   { href: "#planos", label: "Planos" },
-  { href: "#avulsos", label: "Avulsos" },
+  { href: "#avulsos", label: "Departamentos" },
 ];
 
 export function Nav() {

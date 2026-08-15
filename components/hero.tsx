@@ -33,7 +33,7 @@ export function Hero() {
             href="#avulsos"
             className="rounded-md border border-border-strong px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
-            Avulsos
+            Departamentos
           </a>
         </div>
       </Container>
