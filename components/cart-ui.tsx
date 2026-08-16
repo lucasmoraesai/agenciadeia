@@ -228,6 +228,17 @@ export function CartUi() {
                   type="button"
                   onClick={() => {
                     closeDrawer();
+                    const el = document.getElementById("avulsos");
+                    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  }}
+                  className="mt-3 flex w-full items-center justify-center rounded-md border border-border-strong py-2.5 text-sm font-medium transition-colors hover:bg-surface-hover"
+                >
+                  Continuar comprando
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    closeDrawer();
                     setProposal(true);
                   }}
                   className="mt-3 w-full text-center text-sm text-muted transition-opacity hover:opacity-80"
