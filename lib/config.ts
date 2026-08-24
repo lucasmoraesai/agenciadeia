@@ -10,7 +10,13 @@ export const INSTAGRAM_HANDLE = "@lucasmoraes.ai";
 export const LINKEDIN = "https://www.linkedin.com/in/lucasmoraesai/";
 export const PHOTO_PROFILE = "/photos/perfil.jpg";
 
-export const HERO_WORDS = ["IA", "Automação", "Vibe Coding", "Claude Code"] as const;
+export const HERO_PHRASES = [
+  "Agência de Automação",
+  "Agência de IA",
+  "Agência de Marketing",
+  "Agência de Software",
+  "Agência de UX",
+] as const;
 
 export const AVULSOS = [
   {
@@ -54,24 +60,9 @@ export const AVULSOS = [
     body: "Automação interna, Claude Code e stack.",
   },
   {
-    id: "juridico",
-    title: "Jurídico",
-    body: "Contrato, cláusula, revisão e minuta.",
-  },
-  {
     id: "dados",
     title: "Dados",
     body: "Painel, extração, BI e relatório recorrente.",
-  },
-  {
-    id: "compras",
-    title: "Compras",
-    body: "Cotação, fornecedor, pedido e follow-up.",
-  },
-  {
-    id: "sucesso",
-    title: "Sucesso do cliente",
-    body: "Onboarding, retenção, NPS e expansão.",
   },
 ] as const;
 
@@ -80,20 +71,39 @@ export const AVULSO_AMOUNT = 3000;
 export const AVULSO_PERIOD = "/mês por departamento";
 export const ILIMITADO_AMOUNT = 6000;
 
+export const VERTENTES = [
+  "Automação",
+  "IA",
+  "Marketing",
+  "Software",
+  "UX",
+] as const;
+
+export const DEPARTAMENTOS = [
+  "Marketing",
+  "Vendas",
+  "Atendimento",
+  "Financeiro",
+  "Operações",
+  "RH",
+  "Produto",
+  "Tecnologia",
+  "Dados",
+] as const;
+
 export const PLANS = [
   {
-    id: "departamento",
-    name: "Por departamento",
+    id: "agencia",
+    name: "Por agência",
     price: "R$ 3.000",
     period: "/mês",
-    quota: "1 departamento",
+    quota: "1 agência + 1 departamento",
     featured: false,
-    href: "#avulsos",
-    cta: "Escolher departamento",
+    href: "#vertentes",
+    cta: "Escolher agência",
     includes: [
       "Kickoff após o pagamento",
       "Grupo no WhatsApp",
-      "1 departamento à sua escolha",
       "Reunião mensal",
       "CS dedicado",
       "Suporte VIP",
@@ -105,14 +115,13 @@ export const PLANS = [
     name: "Ilimitado",
     price: "R$ 6.000",
     period: "/mês",
-    quota: "Todos os departamentos",
+    quota: "Todas as agências e departamentos",
     featured: true,
     href: "/checkout/?plan=ilimitado",
     cta: "Assinar Ilimitado",
     includes: [
       "Kickoff após o pagamento",
       "Grupo no WhatsApp",
-      "Todos os departamentos",
       "Reunião semanal",
       "CS dedicado",
       "Suporte VIP",

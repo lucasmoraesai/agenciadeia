@@ -20,3 +20,11 @@ yarn-error.log*
 .vercel
 *.tsbuildinfo
 next-env.d.ts
+
+# local tooling
+.dsh-vision-router/
+.opencode/
+AGENTS.md
+CLAUDE.md
+shot-dotgrid.png
+.playwright-mcp/

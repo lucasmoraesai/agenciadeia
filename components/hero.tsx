@@ -8,7 +8,7 @@ export function Hero() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[860px] -translate-x-1/2 rounded-full bg-white/[0.05] blur-[120px]" />
       <Container className="relative py-28 sm:py-36">
         <h1 className="rise tracking-tighter-display max-w-4xl text-5xl font-semibold leading-[1.02] sm:text-7xl lg:text-[84px]">
-          Agência de <RotatingWord />
+          <RotatingWord />
         </h1>
         <p
           className="rise mt-7 max-w-xl text-xl text-muted"
