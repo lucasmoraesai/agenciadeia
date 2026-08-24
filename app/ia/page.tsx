@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { AgencyPage, Icons } from "@/components/agency-page";
+import { IA_FAQ } from "@/lib/faq";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Agência de IA",
+export const metadata: Metadata = pageMetadata({
+  title: "Agência de IA | Agentes 24/7 desde R$ 3.000/mês",
   description:
-    "Agência de IA: agentes, automações e vibe coding para colocar sua empresa no piloto automático.",
-};
+    "Agência de IA: agentes de IA 24/7, automações inteligentes, vibe coding, chatbots, análise de dados e consultoria em IA para empresas. Assinatura mensal com horas ilimitadas e prazo de 48h.",
+  path: "/ia/",
+});
 
 export default function IaPage() {
   return (
@@ -72,6 +75,7 @@ export default function IaPage() {
         "Demita o piloto que nunca sai do papel.",
         "Demita o estagiário de prompts.",
       ]}
+      faq={IA_FAQ}
     />
   );
 }

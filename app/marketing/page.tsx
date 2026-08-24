@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { AgencyPage, Icons } from "@/components/agency-page";
+import { MARKETING_FAQ } from "@/lib/faq";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Agência de Marketing",
+export const metadata: Metadata = pageMetadata({
+  title: "Agência de Marketing com IA | R$ 3.000/mês",
   description:
-    "Agência de Marketing com IA: campanhas, conteúdo, criativo, tráfego e funil — automatizados pela nohumans.",
-};
+    "Agência de marketing com IA: campanhas de performance, conteúdo, criativos, SEO, social media, funil e CRM automatizados. Assinatura mensal com horas ilimitadas e prazo de 48h.",
+  path: "/marketing/",
+});
 
 export default function MarketingPage() {
   return (
@@ -72,6 +75,7 @@ export default function MarketingPage() {
         "Demita o freelancer que some.",
         "Demita o tráfego que não converte.",
       ]}
+      faq={MARKETING_FAQ}
     />
   );
 }

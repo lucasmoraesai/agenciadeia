@@ -1,0 +1,21 @@
+# nohumans — Agência de IA e Automação (agenciadeia.tech)
+
+> Agência de IA e automação para empresas brasileiras, por assinatura mensal com horas ilimitadas: R$ 3.000/mês (1 agência + 1 departamento) ou R$ 6.000/mês (Ilimitado, todas as agências e departamentos). Entrega via grupo de WhatsApp, prazo de até 48h por demanda, 1 demanda ativa por vez. Pagamento via PIX, Bitcoin ou Ethereum. Sem fidelidade.
+
+## Key pages
+
+- [Início](https://agenciadeia.tech/): Agência de IA e automação — 5 vertentes (Automação, IA, Marketing, Software, UX) e 9 departamentos. Planos a partir de R$ 3.000/mês.
+- [Agência de Automação](https://agenciadeia.tech/automacao/): Automação de processos, RPA, integrações de CRM/ERP/WhatsApp, automação de vendas, atendimento, marketing, financeiro e dashboards.
+- [Agência de IA](https://agenciadeia.tech/ia/): Agentes de IA 24/7, automações inteligentes, vibe coding, chatbots, análise de dados e consultoria em IA.
+- [Agência de Marketing](https://agenciadeia.tech/marketing/): Campanhas de performance, conteúdo, criativos, SEO, social media, funil e CRM com IA.
+- [Agência de Software](https://agenciadeia.tech/software/): Sistemas sob medida, aplicações web, integrações e MVPs entregues em dias com vibe coding.
+- [Agência de UX](https://agenciadeia.tech/uxui/): Design de interface, design system, protótipos, landing pages, branding e testes de usabilidade.
+
+## Facts
+
+- Preços: R$ 3.000/mês (plano "Por agência": 1 agência + 1 departamento) e R$ 6.000/mês (plano "Ilimitado": todas as agências e departamentos).
+- Entrega: grupo no WhatsApp, 1 demanda ativa por vez, prazo de até 48 horas, kickoff após o pagamento.
+- Reuniões: mensal no plano por agência; semanal no Ilimitado. CS dedicado e suporte VIP em ambos.
+- Pagamento: PIX, Bitcoin e Ethereum (checkout com QR Code no próprio site).
+- Contato: WhatsApp +55 11 98350-7618 · contato@lucasmoraes.ai · Instagram @lucasmoraes.ai.
+- Fundador: Lucas Moraes, founder & AI engineer (lucasmoraes.ai).

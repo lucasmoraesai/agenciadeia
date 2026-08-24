@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { AgencyPage, Icons } from "@/components/agency-page";
+import { SOFTWARE_FAQ } from "@/lib/faq";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Agência de Software",
+export const metadata: Metadata = pageMetadata({
+  title: "Agência de Software | Sistemas sob medida em dias",
   description:
-    "Agência de Software: sistemas, apps, integrações e MVPs sob medida, entregues em dias com vibe coding.",
-};
+    "Agência de software com IA: sistemas sob medida, aplicações web, integrações, dashboards e MVPs entregues em dias com vibe coding. Assinatura mensal com horas ilimitadas e prazo de 48h.",
+  path: "/software/",
+});
 
 export default function SoftwarePage() {
   return (
@@ -72,6 +75,7 @@ export default function SoftwarePage() {
         "Demita o sistema legado que trava.",
         "Demita o prazo de 6 meses pra um MVP.",
       ]}
+      faq={SOFTWARE_FAQ}
     />
   );
 }

@@ -6,6 +6,10 @@ import { SITE_NAME } from "@/lib/config";
 export const metadata: Metadata = {
   title: "Checkout",
   description: `Pague ${SITE_NAME} com PIX, Bitcoin ou Ethereum.`,
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function CheckoutPage() {

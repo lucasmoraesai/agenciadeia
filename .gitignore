@@ -28,3 +28,6 @@ AGENTS.md
 CLAUDE.md
 shot-dotgrid.png
 .playwright-mcp/
+
+# local npm cache
+.npm-cache/

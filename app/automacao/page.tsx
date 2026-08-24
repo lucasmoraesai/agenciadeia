@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import { AgencyPage, Icons } from "@/components/agency-page";
+import { AUTOMACAO_FAQ } from "@/lib/faq";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Agência de Automação",
+export const metadata: Metadata = pageMetadata({
+  title: "Agência de Automação de Processos | R$ 3.000/mês",
   description:
-    "Agência de Automação: processos ponta a ponta, integrações e fluxos que rodam sozinhos — sem depender de ninguém.",
-};
+    "Agência de automação com IA: automação de processos, RPA, integrações de CRM, ERP e WhatsApp, automação de vendas, atendimento e financeiro. Assinatura mensal com horas ilimitadas e prazo de 48h.",
+  path: "/automacao/",
+});
 
 export default function AutomacaoPage() {
   return (
@@ -72,6 +75,7 @@ export default function AutomacaoPage() {
         "Demita o retrabalho de digitar duas vezes.",
         "Demita o processo que depende de você.",
       ]}
+      faq={AUTOMACAO_FAQ}
     />
   );
 }

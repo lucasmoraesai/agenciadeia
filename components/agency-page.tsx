@@ -1,11 +1,14 @@
 import type { ReactNode } from "react";
 import { Container } from "./container";
 import { Brands } from "./brands";
+import { Faq } from "./faq";
 import { HowItWorks } from "./how-it-works";
 import { Plans } from "./plans";
+import { JsonLd } from "./json-ld";
 import { BentoCard, BentoGrid } from "./magicui/bento-grid";
 import { BlurFade } from "./magicui/blur-fade";
 import { whatsappHref } from "@/lib/whatsapp";
+import { faqSchema, serviceSchema, type FaqItem } from "@/lib/seo";
 
 type IconProps = {
   className?: string;
@@ -191,6 +194,7 @@ export function AgencyPage({
   services,
   firingsTitle,
   firings,
+  faq,
   hero,
 }: {
   title: string;
@@ -202,10 +206,31 @@ export function AgencyPage({
   services: ServiceItem[];
   firingsTitle: string;
   firings: string[];
+  /** FAQ visível + schema FAQPage (otimização SEO/GEO). */
+  faq?: FaqItem[];
   hero?: ReactNode;
 }) {
   return (
     <>
+      <JsonLd
+        data={serviceSchema({
+          name: title,
+          description: subtitle,
+          offers: [
+            {
+              name: "Por agência",
+              price: 3000,
+              description: `${title} + 1 departamento, reunião mensal.`,
+            },
+            {
+              name: "Ilimitado",
+              price: 6000,
+              description: "Todas as agências e departamentos, reunião semanal.",
+            },
+          ],
+        })}
+      />
+      {faq && faq.length > 0 && <JsonLd data={faqSchema(faq)} />}
       {/* Hero */}
       {hero ?? (
       <section className="relative overflow-hidden border-b border-border">
@@ -279,6 +304,14 @@ export function AgencyPage({
       <Brands />
       <HowItWorks />
       <Plans />
+
+      {faq && faq.length > 0 && (
+        <Faq
+          items={faq}
+          title={`Perguntas frequentes — ${title}`}
+          subtitle="O que está incluso, quanto custa e como funciona a entrega."
+        />
+      )}
 
       {/* Firings */}
       <section className="border-b border-border py-28 sm:py-32">

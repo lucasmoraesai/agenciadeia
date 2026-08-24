@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { AgencyPage, Icons } from "@/components/agency-page";
 import { Hero239 } from "@/components/hero239";
+import { UXUI_FAQ } from "@/lib/faq";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Agência de UX",
+export const metadata: Metadata = pageMetadata({
+  title: "Agência de UX/UI | Do protótipo ao produto",
   description:
-    "Agência de UX: interfaces bonitas e funcionais, do protótipo ao produto final — desenhadas com IA.",
-};
+    "Agência de UX e UI com IA: design de interface, design system, protótipos, landing pages, branding e testes de usabilidade. Assinatura mensal com horas ilimitadas e prazo de 48h.",
+  path: "/uxui/",
+});
 
 export default function UxuiPage() {
   return (
@@ -74,6 +77,7 @@ export default function UxuiPage() {
         "Demita o design que trava a conversão.",
         "Demita o freelancer que atrasa o pixel.",
       ]}
+      faq={UXUI_FAQ}
     />
   );
 }
