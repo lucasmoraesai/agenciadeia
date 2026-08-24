@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import { Container } from "./container";
 import { Brands } from "./brands";
-import { Faq } from "./faq";
 import { HowItWorks } from "./how-it-works";
 import { Plans } from "./plans";
 import { JsonLd } from "./json-ld";
@@ -206,7 +205,7 @@ export function AgencyPage({
   services: ServiceItem[];
   firingsTitle: string;
   firings: string[];
-  /** FAQ visível + schema FAQPage (otimização SEO/GEO). */
+  /** FAQ apenas como schema FAQPage (JSON-LD) — invisível na página. */
   faq?: FaqItem[];
   hero?: ReactNode;
 }) {
@@ -304,14 +303,6 @@ export function AgencyPage({
       <Brands />
       <HowItWorks />
       <Plans />
-
-      {faq && faq.length > 0 && (
-        <Faq
-          items={faq}
-          title={`Perguntas frequentes — ${title}`}
-          subtitle="O que está incluso, quanto custa e como funciona a entrega."
-        />
-      )}
 
       {/* Firings */}
       <section className="border-b border-border py-28 sm:py-32">

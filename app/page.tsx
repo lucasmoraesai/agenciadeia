@@ -1,6 +1,5 @@
 import { Avulsos } from "@/components/avulsos";
 import { Brands } from "@/components/brands";
-import { Faq } from "@/components/faq";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { HyperspeedSection } from "@/components/hyperspeed-section";
@@ -45,11 +44,6 @@ export default function Home() {
       <Brands />
       <HowItWorks />
       <Plans />
-      <Faq
-        items={HOME_FAQ}
-        title="Perguntas frequentes sobre a nohumans"
-        subtitle="Preço, entrega, pagamento e funcionamento — direto ao ponto."
-      />
       <Firings />
       <Avulsos />
       <Manifesto />
