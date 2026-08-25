@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { AgencyPage, Icons } from "@/components/agency-page";
+import { Hero237 } from "@/components/hero237";
 import { AUTOMACAO_FAQ } from "@/lib/faq";
 import { pageMetadata } from "@/lib/seo";
 
@@ -13,6 +14,7 @@ export const metadata: Metadata = pageMetadata({
 export default function AutomacaoPage() {
   return (
     <AgencyPage
+      hero={<Hero237 />}
       title="Agência de Automação"
       subtitle="Processos ponta a ponta — fluxos que rodam sozinhos, sem depender de ninguém."
       whatsappMessage="Quero automatizar os processos da minha empresa."

@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
   --background: #000000;
   --surface: #0a0a0a;
@@ -12,6 +14,16 @@
   --subtle: #6f6f6f;
   --card: #0a0a0a;
   --card-foreground: #ededed;
+  --primary: #ededed;
+  --primary-foreground: #000000;
+  --secondary: #1f1f1f;
+  --secondary-foreground: #ededed;
+  --accent: #0a0a0a;
+  --accent-foreground: #ededed;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --input: #1f1f1f;
+  --ring: #ededed;
 }
 
 @theme inline {
@@ -26,8 +38,27 @@
   --color-subtle: var(--subtle);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --animate-orbit: orbit calc(var(--duration)*1s) linear infinite;
+  @keyframes orbit {
+  0% {
+    transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+    }
+  100% {
+    transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
+    }
+  }
 }
 
 @theme {
@@ -98,6 +129,13 @@ body {
 ::selection {
   background: var(--foreground);
   color: var(--background);
+}
+
+.container {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1120px;
+  padding-inline: 1.5rem;
 }
 
 .tracking-tighter-display {

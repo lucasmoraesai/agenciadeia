@@ -141,19 +141,19 @@ const Hero194 = ({ className }: Hero194Props) => {
         <div className="grid h-full w-full grid-cols-1 lg:max-h-[37.5rem] lg:grid-cols-2">
           <div className="flex w-full max-w-[90%] flex-col justify-center gap-5 py-16 pr-10 pl-20 md:max-w-[70%] lg:max-w-full lg:py-0">
             <h1 className="text-4xl leading-[1.1] text-white md:text-5xl lg:text-4xl xl:text-5xl">
-              Generative topologies with AI land surveying
+              Sua operação em movimento.
             </h1>
             <p className="text-sm text-muted-foreground md:text-base">
-              Enhance your photos with cutting-edge technology that brings out
-              the vibrant colors and intricate details of the natural world.
-              Perfect for photographers of all levels, our app makes capturing
-              stunning images effortless.
+              Agentes, automações e entregas rodando 24/7 — sem você tocar em
+              nada. Você pede no grupo, a gente entrega em até 48h.
             </p>
 
             <div className="flex gap-4">
-              <Button variant="secondary">
-                <Command className="size-4" />
-                Download Now
+              <Button asChild variant="secondary">
+                <a href="#planos">
+                  <Command className="size-4" />
+                  Ver planos
+                </a>
               </Button>
             </div>
           </div>
