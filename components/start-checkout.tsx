@@ -19,15 +19,24 @@ export function StartCheckout() {
     [planId],
   );
 
-  const price = plan.id === "ilimitado" ? 6000 : 3000;
-  const monthly = formatBRL(price);
+  const basePrice = plan.id === "ilimitado" ? 6000 : 3000;
+  const isUnlimited = plan.id === "ilimitado";
 
   const [company, setCompany] = useState("");
+  const [billing, setBilling] = useState<"mensal" | "anual">("mensal");
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  const isAnnual = billing === "anual";
+  const monthly = formatBRL(basePrice);
+  const monthlyEquiv = Math.round(basePrice * 0.7);
+  const monthlyEquivBRL = formatBRL(monthlyEquiv);
+  const annualTotal = monthlyEquiv * 12;
+  const annualBRL = formatBRL(annualTotal);
+  const annualDiscountBRL = formatBRL(basePrice * 12 - annualTotal);
 
   const meetingText = `Olá! Quero agendar uma reunião pra entender o plano ${plan.name} (${plan.price}${plan.period}) da No Humans.`;
 
@@ -38,8 +47,6 @@ export function StartCheckout() {
     const d = String(stamp.getDate()).padStart(2, "0");
     return `NH-${y}${m}${d}-01`;
   }, []);
-
-  const isUnlimited = plan.id === "ilimitado";
 
   return (
     <>
@@ -62,11 +69,58 @@ export function StartCheckout() {
             <p className="mt-4 text-3xl font-semibold tracking-tight">
               {plan.name}
             </p>
-            <p className="mt-2 text-lg">
-              {plan.price}
-              <span className="text-sm text-subtle">{plan.period}</span>
+
+            {/* Toggle mensal / anual */}
+            <div className="mt-6 grid grid-cols-2 gap-1 rounded-lg border border-border p-1">
+              <button
+                type="button"
+                onClick={() => setBilling("mensal")}
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                  !isAnnual
+                    ? "bg-foreground text-background"
+                    : "text-muted hover:bg-surface-hover"
+                }`}
+              >
+                Mensal
+              </button>
+              <button
+                type="button"
+                onClick={() => setBilling("anual")}
+                className={`flex items-center justify-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                  isAnnual
+                    ? "bg-foreground text-background"
+                    : "text-muted hover:bg-surface-hover"
+                }`}
+              >
+                Anual
+                <span
+                  className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ${
+                    isAnnual
+                      ? "bg-background text-foreground"
+                      : "bg-foreground text-background"
+                  }`}
+                >
+                  −30%
+                </span>
+              </button>
+            </div>
+
+            <p className="mt-5 text-lg">
+              {isAnnual ? monthlyEquivBRL : plan.price}
+              <span className="text-sm text-subtle">
+                {isAnnual ? "/mês equivalente" : plan.period}
+              </span>
             </p>
+            {isAnnual && (
+              <p className="mt-1 text-sm text-muted">
+                {annualBRL}/ano ·{" "}
+                <span className="font-medium text-foreground">
+                  30% de desconto (economia de {annualDiscountBRL}/ano)
+                </span>
+              </p>
+            )}
             <p className="mt-1 text-sm text-subtle">{plan.quota}</p>
+
             <ul className="mt-6 space-y-3 border-t border-border pt-6">
               {plan.includes.map((item) => (
                 <li key={item} className="flex items-start gap-3 text-sm text-muted">
@@ -76,9 +130,9 @@ export function StartCheckout() {
               ))}
             </ul>
             <p className="mt-6 text-sm text-subtle">
-              Total mensal:{" "}
+              {isAnnual ? "Total anual" : "Total mensal"}:{" "}
               <span className="font-semibold text-foreground">
-                {monthly}/mês
+                {isAnnual ? `${annualBRL}/ano` : `${monthly}/mês`}
               </span>
             </p>
             <a
@@ -93,12 +147,14 @@ export function StartCheckout() {
           <aside className="rounded-xl border border-border-strong bg-surface p-6 lg:sticky lg:top-20 lg:self-start">
             <h2 className="text-sm font-medium tracking-tight">Como quer seguir?</h2>
             <p className="mt-2 text-sm text-muted">
-              {plan.name} · {monthly}
-              {plan.period}
+              {plan.name} ·{" "}
+              {isAnnual
+                ? `${annualBRL}/ano (30% OFF)`
+                : `${monthly}${plan.period}`}
             </p>
             <div className="mt-6 space-y-3">
               <a
-                href={`/checkout/?plan=${plan.id}`}
+                href={`/checkout/?plan=${plan.id}${isAnnual ? "&billing=anual" : ""}`}
                 className="flex w-full items-center justify-center rounded-md bg-foreground px-4 py-3 text-sm font-medium text-background transition-opacity hover:opacity-85"
               >
                 Assinar agora
@@ -134,7 +190,8 @@ export function StartCheckout() {
             />
             <p className="mt-6 text-xs leading-relaxed text-subtle">
               Sem contrato de fidelidade. Pausa ou cancela quando quiser.
-              Pagamento via PIX, Bitcoin ou Ethereum.
+              Pagamento via PIX, Bitcoin ou Ethereum. Plano anual com 30% de
+              desconto.
             </p>
           </aside>
         </div>
@@ -218,6 +275,9 @@ export function StartCheckout() {
                 {/* Título */}
                 <h2 className="mt-5 text-2xl font-bold tracking-tight">
                   Assinatura {plan.name}
+                  <span className="ml-2 align-middle rounded-full border border-neutral-300 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-widest text-neutral-600">
+                    {isAnnual ? "Anual · −30%" : "Mensal"}
+                  </span>
                 </h2>
                 <p className="mt-1 text-sm leading-relaxed text-neutral-600">
                   Automação, IA, marketing, software e UX em uma assinatura.
@@ -239,12 +299,26 @@ export function StartCheckout() {
                         Assinatura {plan.name}
                       </td>
                       <td className="py-2.5 pr-4 text-neutral-600">
-                        {plan.quota}
+                        {plan.quota} · cobrança{" "}
+                        {isAnnual ? "anual" : "mensal"}
                       </td>
                       <td className="py-2.5 text-right font-semibold">
-                        {monthly}/mês
+                        {isAnnual ? `${annualBRL}/ano` : `${monthly}/mês`}
                       </td>
                     </tr>
+                    {isAnnual && (
+                      <tr className="border-b border-neutral-200">
+                        <td className="py-2.5 pr-4 font-semibold">
+                          Desconto anual (30% OFF)
+                        </td>
+                        <td className="py-2.5 pr-4 text-neutral-600">
+                          Equivale a {monthlyEquivBRL}/mês
+                        </td>
+                        <td className="py-2.5 text-right font-semibold text-neutral-700">
+                          −{annualDiscountBRL}
+                        </td>
+                      </tr>
+                    )}
                     <tr className="border-b border-neutral-200">
                       <td className="py-2.5 pr-4 font-semibold">
                         Setup &amp; kickoff
@@ -284,7 +358,7 @@ export function StartCheckout() {
                         Formas de pagamento
                       </td>
                       <td className="py-2.5 pr-4 text-neutral-600">
-                        PIX, Bitcoin ou Ethereum — mensal, sem fidelidade
+                        PIX, Bitcoin ou Ethereum — sem fidelidade
                       </td>
                       <td className="py-2.5 text-right text-neutral-500">
                         —
@@ -296,12 +370,12 @@ export function StartCheckout() {
                 {/* Total */}
                 <div className="mt-4 flex items-center justify-between rounded-lg border border-neutral-300 bg-neutral-50 px-5 py-3">
                   <span className="text-sm font-semibold text-neutral-700">
-                    Total mensal
+                    {isAnnual ? "Total anual" : "Total mensal"}
                   </span>
                   <span className="text-xl font-bold">
-                    {monthly}
+                    {isAnnual ? annualBRL : monthly}
                     <span className="ml-1 text-sm font-medium text-neutral-500">
-                      /mês
+                      {isAnnual ? "/ano" : "/mês"}
                     </span>
                   </span>
                 </div>
@@ -326,9 +400,12 @@ export function StartCheckout() {
                   </p>
                   <p className="mt-1">
                     Kickoff após o pagamento para configurar o grupo e entender a
-                    demanda. CS dedicado e suporte VIP. Mensal, via WhatsApp —
-                    pausa ou cancela quando quiser. Validade desta proposta: 15
-                    dias.
+                    demanda. CS dedicado e suporte VIP. Cobrança{" "}
+                    {isAnnual ? "anual" : "mensal"}, via WhatsApp — pausa ou
+                    cancela quando quiser.
+                    {isAnnual &&
+                      " Desconto de 30% aplicado no plano anual."}{" "}
+                    Validade desta proposta: 15 dias.
                   </p>
                 </div>
 

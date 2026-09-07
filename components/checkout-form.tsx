@@ -48,6 +48,7 @@ export function CheckoutForm() {
   const plan = search.get("plan");
   const mode: CheckoutMode =
     plan === "ilimitado" ? "ilimitado" : plan === "agencia" ? "agencia" : "cart";
+  const billing = search.get("billing") === "anual" ? "anual" : "mensal";
 
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -57,18 +58,23 @@ export function CheckoutForm() {
   const [cryptoLoading, setCryptoLoading] = useState(false);
 
   const order = useMemo(() => {
+    const annual = billing === "anual";
     if (mode === "ilimitado") {
       return {
         title: "Ilimitado",
-        lines: ["Todos os departamentos"],
-        total: ILIMITADO_AMOUNT,
+        lines: annual
+          ? ["Todos os departamentos", "Cobrança anual — 30% OFF"]
+          : ["Todos os departamentos"],
+        total: annual ? Math.round(ILIMITADO_AMOUNT * 0.7) * 12 : ILIMITADO_AMOUNT,
       };
     }
     if (mode === "agencia") {
       return {
         title: "Por agência",
-        lines: ["1 agência + 1 departamento"],
-        total: AVULSO_AMOUNT,
+        lines: annual
+          ? ["1 agência + 1 departamento", "Cobrança anual — 30% OFF"]
+          : ["1 agência + 1 departamento"],
+        total: annual ? Math.round(AVULSO_AMOUNT * 0.7) * 12 : AVULSO_AMOUNT,
       };
     }
     return {
@@ -76,7 +82,9 @@ export function CheckoutForm() {
       lines: items.map((item) => `${item.title} — ${formatBRL(AVULSO_AMOUNT)}/mês`),
       total,
     };
-  }, [mode, items, total]);
+  }, [mode, items, total, billing]);
+
+  const periodLabel = mode === "cart" ? "/mês" : billing === "anual" ? "/ano" : "/mês";
 
   const emptyCart = mode === "cart" && ready && items.length === 0;
 
@@ -137,14 +145,18 @@ export function CheckoutForm() {
       email.trim() ? `E-mail: ${email.trim()}` : null,
       "",
       mode === "ilimitado"
-        ? "Plano: Ilimitado — R$ 6.000/mês"
+        ? billing === "anual"
+          ? `Plano: Ilimitado — Anual (30% OFF, ${formatBRL(order.total)}/ano)`
+          : "Plano: Ilimitado — R$ 6.000/mês"
         : mode === "agencia"
-          ? "Plano: Por agência — R$ 3.000/mês"
+          ? billing === "anual"
+            ? `Plano: Por agência — Anual (30% OFF, ${formatBRL(order.total)}/ano)`
+            : "Plano: Por agência — R$ 3.000/mês"
           : "Pedido:",
       ...(mode === "ilimitado" || mode === "agencia"
         ? []
         : order.lines.map((line) => `• ${line}`)),
-      `Total: ${formatBRL(order.total)}/mês`,
+      `Total: ${formatBRL(order.total)}${periodLabel}`,
       "",
       `Pagamento: ${method.toUpperCase()}`,
       method === "pix"
@@ -158,7 +170,7 @@ export function CheckoutForm() {
     ].filter((line) => line !== null);
 
     return lines.join("\n");
-  }, [company, email, mode, order, method, paymentTarget, cryptoAmount]);
+  }, [company, email, mode, order, method, paymentTarget, cryptoAmount, billing, periodLabel]);
 
   if (!ready) {
     return (
@@ -220,8 +232,13 @@ export function CheckoutForm() {
               ))}
             </ul>
             <p className="mt-6 flex items-baseline justify-between border-t border-border pt-4">
-              <span className="text-sm text-subtle">Total mensal</span>
-              <span className="text-xl font-semibold">{formatBRL(order.total)}</span>
+              <span className="text-sm text-subtle">
+                Total {mode === "cart" ? "mensal" : billing === "anual" ? "anual" : "mensal"}
+              </span>
+              <span className="text-xl font-semibold">
+                {formatBRL(order.total)}
+                <span className="text-sm text-subtle">{periodLabel}</span>
+              </span>
             </p>
             {mode === "cart" && (
               <p className="mt-2 text-xs text-subtle">
@@ -295,7 +312,8 @@ export function CheckoutForm() {
                     : "Pagar com Ethereum"}
               </h2>
               <p className="mt-0.5 text-sm text-muted">
-                {formatBRL(order.total)}/mês
+                {formatBRL(order.total)}
+                {periodLabel}
                 {method !== "pix" && cryptoAmount
                   ? ` ≈ ${cryptoAmount} ${method.toUpperCase()}`
                   : ""}
