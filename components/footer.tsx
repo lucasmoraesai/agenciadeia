@@ -19,6 +19,13 @@ const PAGES = [
   { href: "/software", label: "Agência de Software" },
 ];
 
+const PROGRAMS = [
+  { href: "/parceiro", label: "Quero ser um Parceiro" },
+  { href: "/revendedor", label: "Quero ser um Revendedor" },
+  { href: "/franquia", label: "Quero ser uma Franquia" },
+  { href: "/afiliado", label: "Quero ser um Afiliado" },
+];
+
 const SOCIALS = [
   { label: "WhatsApp", href: WHATSAPP_URL, external: true },
   { label: INSTAGRAM_HANDLE, href: INSTAGRAM, external: true },
@@ -66,7 +73,7 @@ export function Footer() {
 
       {/* Links */}
       <Container className="py-14">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted">
@@ -100,6 +107,23 @@ export function Footer() {
                     className="text-sm text-muted transition-opacity hover:opacity-80"
                   >
                     {page.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
+              Programas
+            </p>
+            <ul className="mt-4 space-y-2.5">
+              {PROGRAMS.map((program) => (
+                <li key={program.href}>
+                  <a
+                    href={program.href}
+                    className="text-sm text-muted transition-opacity hover:opacity-80"
+                  >
+                    {program.label}
                   </a>
                 </li>
               ))}
