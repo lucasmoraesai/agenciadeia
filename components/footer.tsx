@@ -17,7 +17,6 @@ const PAGES = [
   { href: "/ia", label: "Agência de IA" },
   { href: "/marketing", label: "Agência de Marketing" },
   { href: "/software", label: "Agência de Software" },
-  { href: "/uxui", label: "Agência de UX" },
 ];
 
 const SOCIALS = [

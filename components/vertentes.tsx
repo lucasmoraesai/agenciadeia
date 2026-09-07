@@ -37,12 +37,6 @@ const VERTENTES: Vertente[] = [
     title: "Agência de Software",
     body: "Construídos sob medida, em dias.",
   },
-  {
-    href: "/uxui",
-    icon: Icons.layout,
-    title: "Agência de UX",
-    body: "Interfaces bonitas e funcionais, do protótipo ao produto.",
-  },
 ];
 
 export function Vertentes() {
@@ -53,7 +47,7 @@ export function Vertentes() {
           Vertentes
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-          Cinco agências. Em 1 só lugar.
+          Quatro agências. Em 1 só lugar.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
           Escolha a frente que sua empresa precisa — ou combine todas.
