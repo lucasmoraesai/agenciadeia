@@ -1,5 +1,6 @@
+import { HERO_PHRASES } from "@/lib/config";
 import { Container } from "./container";
-import { RotatingWord } from "./rotating-word";
+import { Typewriter } from "./typewriter";
 
 export function Hero() {
   return (
@@ -8,8 +9,9 @@ export function Hero() {
       <div className="pointer-events-none absolute left-1/2 top-0 h-[420px] w-[860px] -translate-x-1/2 rounded-full bg-white/[0.05] blur-[120px]" />
       <Container className="relative py-28 sm:py-36">
         <h1 className="rise tracking-tighter-display max-w-4xl text-5xl font-semibold leading-[1.02] sm:text-7xl lg:text-[84px]">
-          <RotatingWord />
-          <span className="block">por assinatura</span>
+          <Typewriter phrases={HERO_PHRASES} />
+          <br />
+          <span className="text-subtle">por assinatura</span>
         </h1>
         <p
           className="rise mt-7 max-w-xl text-xl text-muted"
