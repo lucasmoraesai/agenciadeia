@@ -9,7 +9,7 @@ export function Hero() {
       <Container className="relative py-28 sm:py-36">
         <h1 className="rise tracking-tighter-display max-w-4xl text-5xl font-semibold leading-[1.02] sm:text-7xl lg:text-[84px]">
           <RotatingWord />
-          <span className="block">All-in-one</span>
+          <span className="block">por assinatura</span>
         </h1>
         <p
           className="rise mt-7 max-w-xl text-xl text-muted"
