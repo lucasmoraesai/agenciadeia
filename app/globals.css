@@ -266,29 +266,20 @@ body {
 }
 
 @media print {
-  body * {
-    visibility: hidden;
+  body > *:not(.print-only) {
+    display: none;
   }
 
   .print-only {
     display: block;
-  }
-
-  .print-only,
-  .print-only * {
-    visibility: visible;
-  }
-
-  .proposal-sheet,
-  .proposal-sheet * {
-    visibility: visible;
+    margin: 0;
+    padding: 0;
   }
 
   .proposal-sheet {
-    position: absolute;
-    inset: 0;
     width: 100%;
     max-width: none;
+    margin: 0;
     border: 0;
     border-radius: 0;
     background: #fff;
