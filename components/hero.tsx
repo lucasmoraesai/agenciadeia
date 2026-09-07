@@ -28,7 +28,7 @@ export function Hero() {
             Ver planos
           </a>
           <a
-            href="/checkout/?plan=ilimitado"
+            href="/start-checkout/?plan=ilimitado"
             className="rounded-md border border-border-strong px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
             Assinar Ilimitado

@@ -98,8 +98,8 @@ export const PLANS = [
     period: "/mês",
     quota: "1 agência + 1 departamento",
     featured: false,
-    href: "#vertentes",
-    cta: "Escolher agência",
+    href: "/start-checkout/?plan=agencia",
+    cta: "Assinar",
     includes: [
       "Kickoff após o pagamento",
       "Grupo no WhatsApp",
@@ -116,7 +116,7 @@ export const PLANS = [
     period: "/mês",
     quota: "Todas as agências e departamentos",
     featured: true,
-    href: "/checkout/?plan=ilimitado",
+    href: "/start-checkout/?plan=ilimitado",
     cta: "Assinar Ilimitado",
     includes: [
       "Kickoff após o pagamento",

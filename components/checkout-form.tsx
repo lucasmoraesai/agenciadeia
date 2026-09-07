@@ -21,7 +21,7 @@ import { useCart } from "./cart-context";
 import { Container } from "./container";
 import { PayMethodIcon } from "./pay-method-icon";
 
-type CheckoutMode = "cart" | "ilimitado";
+type CheckoutMode = "cart" | "ilimitado" | "agencia";
 
 function CopyButton({ value, disabled }: { value: string; disabled?: boolean }) {
   const [copied, setCopied] = useState(false);
@@ -46,7 +46,8 @@ export function CheckoutForm() {
   const search = useSearchParams();
   const { items, total, ready, clear } = useCart();
   const plan = search.get("plan");
-  const mode: CheckoutMode = plan === "ilimitado" ? "ilimitado" : "cart";
+  const mode: CheckoutMode =
+    plan === "ilimitado" ? "ilimitado" : plan === "agencia" ? "agencia" : "cart";
 
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
@@ -61,6 +62,13 @@ export function CheckoutForm() {
         title: "Ilimitado",
         lines: ["Todos os departamentos"],
         total: ILIMITADO_AMOUNT,
+      };
+    }
+    if (mode === "agencia") {
+      return {
+        title: "Por agência",
+        lines: ["1 agência + 1 departamento"],
+        total: AVULSO_AMOUNT,
       };
     }
     return {
@@ -128,8 +136,14 @@ export function CheckoutForm() {
       company.trim() ? `Empresa: ${company.trim()}` : null,
       email.trim() ? `E-mail: ${email.trim()}` : null,
       "",
-      mode === "ilimitado" ? "Plano: Ilimitado — R$ 6.000/mês" : "Pedido:",
-      ...(mode === "ilimitado" ? [] : order.lines.map((line) => `• ${line}`)),
+      mode === "ilimitado"
+        ? "Plano: Ilimitado — R$ 6.000/mês"
+        : mode === "agencia"
+          ? "Plano: Por agência — R$ 3.000/mês"
+          : "Pedido:",
+      ...(mode === "ilimitado" || mode === "agencia"
+        ? []
+        : order.lines.map((line) => `• ${line}`)),
       `Total: ${formatBRL(order.total)}/mês`,
       "",
       `Pagamento: ${method.toUpperCase()}`,
@@ -362,7 +376,7 @@ export function CheckoutForm() {
             {keysReady ? "Já paguei — avisar no WhatsApp" : "Pedir chave no WhatsApp"}
           </a>
           <a
-            href={mode === "ilimitado" ? "/#planos" : "/#avulsos"}
+            href={mode === "cart" ? "/#avulsos" : "/#planos"}
             className="mt-3 flex w-full items-center justify-center text-xs text-subtle transition-opacity hover:opacity-80"
           >
             Voltar
