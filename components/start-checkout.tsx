@@ -20,7 +20,6 @@ export function StartCheckout() {
   );
 
   const basePrice = plan.id === "ilimitado" ? 6000 : 3000;
-  const isUnlimited = plan.id === "ilimitado";
 
   const [company, setCompany] = useState("");
   const [billing, setBilling] = useState<"mensal" | "anual">("mensal");
@@ -301,6 +300,11 @@ export function StartCheckout() {
                         {isAnnual ? `${annualBRL}/ano` : `${monthly}/mês`}
                       </td>
                     </tr>
+                    <tr className="border-b border-neutral-200 text-neutral-500">
+                      <td className="py-3 pr-4">Setup / Implantação</td>
+                      <td className="py-3 pr-4">Gratuita</td>
+                      <td className="py-3 text-right font-medium">Gratuito</td>
+                    </tr>
                     {isAnnual && (
                       <tr className="border-b border-neutral-200 text-neutral-500">
                         <td className="py-3 pr-4">Desconto anual</td>
@@ -345,18 +349,11 @@ export function StartCheckout() {
                 </p>
                 <ul className="mt-3 space-y-2 text-sm leading-relaxed text-neutral-600">
                   <li>
-                    Kickoff após o pagamento para configurar o grupo e entender a
-                    demanda.
+                    Pagamento na assinatura —{" "}
+                    {isAnnual
+                      ? "em caso de cancelamento, multa de 30% sobre o valor em aberto."
+                      : "sem multa em caso de cancelamento."}
                   </li>
-                  <li>
-                    Reunião {isUnlimited ? "semanal" : "mensal"}, CS dedicado e
-                    suporte VIP.
-                  </li>
-                  <li>
-                    Horas ilimitadas, 1 demanda ativa por vez, prazo de até 48h.
-                  </li>
-                  <li>Sem fidelidade — pausa ou cancela quando quiser.</li>
-                  {isAnnual && <li>Plano anual com 30% de desconto.</li>}
                   <li>Validade desta proposta: 15 dias.</li>
                 </ul>
 
