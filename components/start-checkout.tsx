@@ -32,9 +32,12 @@ export function StartCheckout() {
     window.addEventListener("keydown", onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    // Abre direto o diálogo de impressão (Salvar como PDF)
+    const printTimer = window.setTimeout(() => window.print(), 400);
     return () => {
       window.removeEventListener("keydown", onKey);
       document.body.style.overflow = prev;
+      window.clearTimeout(printTimer);
     };
   }, [proposal]);
 
@@ -157,106 +160,159 @@ export function StartCheckout() {
       {/* Proposta comercial (orçamento) */}
       {proposal && (
         <div className="fixed inset-0 z-[70] overflow-auto bg-black/80 p-4 sm:p-8">
-          <div className="proposal-sheet mx-auto w-full max-w-2xl rounded-xl border border-border bg-background p-8 sm:p-10">
-            <div className="flex items-start justify-between gap-4">
+          <div className="proposal-sheet mx-auto w-full max-w-2xl rounded-2xl bg-white p-8 text-neutral-900 shadow-2xl sm:p-12">
+            {/* Header */}
+            <header className="flex items-start justify-between gap-6 border-b border-neutral-200 pb-8">
               <div>
-                <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
+                <p className="text-2xl font-bold tracking-tight">nohumans</p>
+                <p className="mt-1 text-xs text-neutral-500">
+                  Agência de IA e Automação — assinatura mensal
+                </p>
+              </div>
+              <div className="shrink-0 text-right">
+                <p className="font-mono text-[10px] uppercase tracking-widest text-neutral-400">
                   Proposta comercial
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold tracking-tight">
-                  {SITE_NAME}
-                </h2>
+                <p className="mt-1 text-sm font-semibold">{proposalNumber}</p>
               </div>
-              <button
-                type="button"
-                onClick={() => setProposal(false)}
-                className="proposal-actions text-sm text-muted transition-opacity hover:opacity-80"
-              >
-                Fechar
-              </button>
-            </div>
+            </header>
 
-            <dl className="mt-8 grid gap-3 text-sm sm:grid-cols-2">
+            {/* Meta */}
+            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 text-sm sm:grid-cols-4">
               <div>
-                <dt className="text-subtle">Número</dt>
-                <dd className="mt-1 font-mono">{proposalNumber}</dd>
-              </div>
-              <div>
-                <dt className="text-subtle">Data</dt>
-                <dd className="mt-1">
+                <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                  Data
+                </dt>
+                <dd className="mt-1 font-medium">
                   {new Date().toLocaleDateString("pt-BR")}
                 </dd>
               </div>
               <div>
-                <dt className="text-subtle">Empresa</dt>
-                <dd className="mt-1">{company.trim() || "A definir"}</dd>
+                <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                  Validade
+                </dt>
+                <dd className="mt-1 font-medium">15 dias</dd>
               </div>
               <div>
-                <dt className="text-subtle">Validade</dt>
-                <dd className="mt-1">15 dias</dd>
+                <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                  Empresa
+                </dt>
+                <dd className="mt-1 font-medium">
+                  {company.trim() || "A definir"}
+                </dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                  Emitido por
+                </dt>
+                <dd className="mt-1 font-medium">nohumans</dd>
               </div>
             </dl>
 
+            {/* Título */}
+            <h2 className="mt-10 text-xl font-bold tracking-tight">
+              Assinatura {plan.name}
+            </h2>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-600">
+              Automação, IA, marketing, software e UX em uma assinatura. Horas
+              ilimitadas, 1 demanda ativa por vez, prazo de até 48h.
+            </p>
+
+            {/* Tabela */}
             <table className="mt-8 w-full text-left text-sm">
               <thead>
-                <tr className="border-b border-border text-subtle">
-                  <th className="pb-3 font-normal">Plano</th>
-                  <th className="pb-3 font-normal">Escopo</th>
-                  <th className="pb-3 text-right font-normal">Mensal</th>
+                <tr className="border-b border-neutral-200 text-[10px] uppercase tracking-widest text-neutral-400">
+                  <th className="pb-3 font-medium">Item</th>
+                  <th className="pb-3 font-medium">Escopo</th>
+                  <th className="pb-3 text-right font-medium">Mensal</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-border">
-                  <td className="py-3 font-medium">{plan.name}</td>
-                  <td className="py-3 text-muted">{plan.quota}</td>
-                  <td className="py-3 text-right">{monthly}</td>
+                <tr className="border-b border-neutral-200">
+                  <td className="py-4 font-semibold">Assinatura {plan.name}</td>
+                  <td className="py-4 text-neutral-600">{plan.quota}</td>
+                  <td className="py-4 text-right font-semibold">{monthly}</td>
                 </tr>
               </tbody>
             </table>
 
-            <p className="mt-6 text-right text-lg font-semibold tracking-tight">
-              Total {monthly}/mês
-            </p>
-            <p className="mt-6 text-sm leading-relaxed text-muted">
-              Kickoff após o pagamento para configurar o grupo e entender a
-              demanda. Reunião mensal, CS dedicado e suporte VIP. Horas
-              ilimitadas, 1 demanda ativa por vez, prazo de até 48h.
-            </p>
+            {/* Total */}
+            <div className="mt-6 flex items-center justify-between rounded-lg bg-neutral-100 px-5 py-4">
+              <span className="text-sm font-medium text-neutral-600">
+                Total mensal
+              </span>
+              <span className="text-xl font-bold">{monthly}/mês</span>
+            </div>
 
-            <label className="mt-6 block text-sm text-muted" htmlFor="proposal-company">
-              Empresa (opcional)
-            </label>
-            <input
-              id="proposal-company"
-              value={company}
-              onChange={(event) => setCompany(event.target.value)}
-              placeholder="Nome da empresa"
-              className="mt-2 w-full rounded-md border border-border bg-surface px-3 py-2 text-sm outline-none placeholder:text-subtle focus:border-border-strong"
-            />
+            {/* Incluído */}
+            <p className="mt-8 text-[10px] uppercase tracking-widest text-neutral-400">
+              O que está incluído
+            </p>
+            <ul className="mt-3 grid gap-2 text-sm text-neutral-700 sm:grid-cols-2">
+              {plan.includes.map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-900" />
+                  <span className="leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
 
-            <div className="proposal-actions mt-8 flex flex-wrap gap-3">
-              <a
-                href={whatsappHref(proposalText)}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+            {/* Condições */}
+            <div className="mt-8 rounded-lg border border-neutral-200 p-5 text-sm leading-relaxed text-neutral-600">
+              <p className="font-semibold text-neutral-900">Condições</p>
+              <p className="mt-2">
+                Kickoff após o pagamento para configurar o grupo e entender a
+                demanda. Reunião mensal (semanal no Ilimitado), CS dedicado e
+                suporte VIP. Mensal, via WhatsApp — pausa ou cancela quando
+                quiser. Validade desta proposta: 15 dias.
+              </p>
+            </div>
+
+            {/* Footer */}
+            <footer className="mt-10 flex flex-wrap items-center justify-between gap-2 border-t border-neutral-200 pt-6 text-xs text-neutral-500">
+              <span>nohumans · agenciadeia.tech</span>
+              <span>contato@lucasmoraes.ai · +55 11 98350-7618</span>
+            </footer>
+
+            {/* Ações (somem na impressão) */}
+            <div className="proposal-actions mt-10 space-y-4 border-t border-neutral-200 pt-6">
+              <label
+                className="block text-sm text-neutral-600"
+                htmlFor="proposal-company"
               >
-                Enviar no WhatsApp
-              </a>
-              <button
-                type="button"
-                onClick={() => window.print()}
-                className="rounded-md border border-border-strong px-4 py-2.5 text-sm transition-colors hover:bg-surface-hover"
-              >
-                Imprimir / PDF
-              </button>
-              <button
-                type="button"
-                onClick={() => setProposal(false)}
-                className="rounded-md border border-border-strong px-4 py-2.5 text-sm transition-colors hover:bg-surface-hover"
-              >
-                Voltar
-              </button>
+                Empresa (opcional — aparece na proposta)
+              </label>
+              <input
+                id="proposal-company"
+                value={company}
+                onChange={(event) => setCompany(event.target.value)}
+                placeholder="Nome da empresa"
+                className="mt-1 w-full rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 outline-none placeholder:text-neutral-400 focus:border-neutral-500"
+              />
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={whatsappHref(proposalText)}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-md bg-neutral-900 px-4 py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-85"
+                >
+                  Enviar no WhatsApp
+                </a>
+                <button
+                  type="button"
+                  onClick={() => window.print()}
+                  className="rounded-md border border-neutral-300 px-4 py-2.5 text-sm font-medium transition-colors hover:bg-neutral-100"
+                >
+                  Imprimir / PDF
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setProposal(false)}
+                  className="rounded-md border border-neutral-300 px-4 py-2.5 text-sm font-medium transition-colors hover:bg-neutral-100"
+                >
+                  Fechar
+                </button>
+              </div>
             </div>
           </div>
         </div>

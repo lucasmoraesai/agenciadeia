@@ -255,6 +255,11 @@ body {
   }
 }
 
+@page {
+  size: A4;
+  margin: 12mm;
+}
+
 @media print {
   body * {
     visibility: hidden;
@@ -275,6 +280,8 @@ body {
     background: #fff;
     color: #111;
     box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 
   .proposal-actions {
