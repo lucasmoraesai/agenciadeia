@@ -260,9 +260,23 @@ body {
   margin: 12mm;
 }
 
+/* Proposta comercial: invisível na tela, visível só na impressão (PDF) */
+.print-only {
+  display: none;
+}
+
 @media print {
   body * {
     visibility: hidden;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .print-only,
+  .print-only * {
+    visibility: visible;
   }
 
   .proposal-sheet,
