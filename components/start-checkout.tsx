@@ -202,130 +202,170 @@ export function StartCheckout() {
         createPortal(
           <div className="print-only">
             <div className="proposal-sheet w-full bg-white text-neutral-900">
-              {/* Header */}
-              <header className="flex items-start justify-between gap-6 border-b border-neutral-200 pb-6">
-                <div className="flex items-center gap-3">
-                  <svg
-                    viewBox="0 0 32 32"
-                    fill="none"
-                    className="h-8 w-8 shrink-0 text-neutral-900"
-                    aria-hidden
-                  >
-                    <circle
-                      cx="16"
-                      cy="16"
-                      r="10"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeDasharray="52 10"
-                      strokeLinecap="round"
-                      transform="rotate(-40 16 16)"
-                    />
-                  </svg>
-                  <div>
-                    <p className="text-xl font-bold leading-none tracking-tight">
-                      nohumans
-                    </p>
-                    <p className="mt-1 text-xs text-neutral-500">
-                      Agência de IA e Automação
+              <div className="px-10 py-8">
+                {/* Header */}
+                <header className="flex items-start justify-between gap-6 border-b border-neutral-200 pb-6">
+                  <div className="flex items-center gap-3">
+                    <svg
+                      viewBox="0 0 32 32"
+                      fill="none"
+                      className="h-9 w-9 shrink-0 text-neutral-900"
+                      aria-hidden
+                    >
+                      <circle
+                        cx="16"
+                        cy="16"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeDasharray="52 10"
+                        strokeLinecap="round"
+                        transform="rotate(-40 16 16)"
+                      />
+                    </svg>
+                    <div>
+                      <p className="text-xl font-bold leading-none tracking-tight">
+                        nohumans
+                      </p>
+                      <p className="mt-1 text-xs text-neutral-500">
+                        Agência de IA e Automação
+                      </p>
+                    </div>
+                  </div>
+                  <div className="shrink-0 text-right">
+                    <p className="text-sm font-bold">Proposta comercial</p>
+                    <p className="mt-0.5 font-mono text-xs text-neutral-500">
+                      {proposalNumber}
                     </p>
                   </div>
-                </div>
-                <div className="shrink-0 text-right">
-                  <p className="text-sm font-bold">Proposta comercial</p>
-                  <p className="mt-0.5 font-mono text-xs text-neutral-500">
-                    {proposalNumber}
-                  </p>
-                </div>
-              </header>
+                </header>
 
-              {/* Meta */}
-              <div className="mt-5 flex flex-wrap gap-x-10 gap-y-2 text-sm">
-                <p>
-                  <span className="text-neutral-400">Data</span>{" "}
-                  <span className="font-medium">
-                    {new Date().toLocaleDateString("pt-BR")}
+                {/* Meta */}
+                <dl className="mt-6 grid grid-cols-2 gap-x-8 gap-y-3 text-sm sm:grid-cols-4">
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                      Data
+                    </dt>
+                    <dd className="mt-1 font-medium">
+                      {new Date().toLocaleDateString("pt-BR")}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                      Validade
+                    </dt>
+                    <dd className="mt-1 font-medium">15 dias</dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                      Empresa
+                    </dt>
+                    <dd className="mt-1 font-medium">
+                      {company.trim() || "A definir"}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-[10px] uppercase tracking-widest text-neutral-400">
+                      Emitido por
+                    </dt>
+                    <dd className="mt-1 font-medium">nohumans</dd>
+                  </div>
+                </dl>
+
+                {/* Título */}
+                <h2 className="mt-8 text-xl font-bold tracking-tight">
+                  Assinatura {plan.name}
+                  <span className="ml-2 align-middle text-xs font-semibold uppercase tracking-widest text-neutral-500">
+                    {isAnnual ? "Anual · −30%" : "Mensal"}
                   </span>
-                </p>
-                <p>
-                  <span className="text-neutral-400">Empresa</span>{" "}
-                  <span className="font-medium">
-                    {company.trim() || "A definir"}
-                  </span>
-                </p>
-                <p>
-                  <span className="text-neutral-400">Validade</span>{" "}
-                  <span className="font-medium">15 dias</span>
-                </p>
-              </div>
+                </h2>
 
-              {/* Título */}
-              <h2 className="mt-6 text-lg font-bold tracking-tight">
-                Assinatura {plan.name}
-                {isAnnual ? " — Anual (−30%)" : " — Mensal"}
-              </h2>
-
-              {/* Tabela estilo invoice */}
-              <table className="mt-5 w-full text-left text-sm">
-                <thead>
-                  <tr className="border-b border-neutral-900 text-[10px] uppercase tracking-widest text-neutral-400">
-                    <th className="pb-2 pr-4 font-semibold">Item</th>
-                    <th className="pb-2 pr-4 font-semibold">Descrição</th>
-                    <th className="pb-2 text-right font-semibold">Valor</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-b border-neutral-200">
-                    <td className="py-3 pr-4 font-medium">
-                      Assinatura {plan.name}
-                    </td>
-                    <td className="py-3 pr-4 text-neutral-500">
-                      {plan.quota} · cobrança {isAnnual ? "anual" : "mensal"}
-                    </td>
-                    <td className="py-3 text-right font-semibold">
-                      {isAnnual ? `${annualBRL}/ano` : `${monthly}/mês`}
-                    </td>
-                  </tr>
-                  {isAnnual && (
-                    <tr className="border-b border-neutral-200 text-neutral-500">
-                      <td className="py-3 pr-4">Desconto anual</td>
-                      <td className="py-3 pr-4">30% OFF</td>
-                      <td className="py-3 text-right font-medium">
-                        −{annualDiscountBRL}
+                {/* Tabela estilo invoice */}
+                <table className="mt-6 w-full text-left text-sm">
+                  <thead>
+                    <tr className="border-b border-neutral-900 text-[10px] uppercase tracking-widest text-neutral-400">
+                      <th className="pb-2 pr-4 font-semibold">Item</th>
+                      <th className="pb-2 pr-4 font-semibold">Descrição</th>
+                      <th className="pb-2 text-right font-semibold">Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-neutral-200">
+                      <td className="py-3 pr-4 font-medium">
+                        Assinatura {plan.name}
+                      </td>
+                      <td className="py-3 pr-4 text-neutral-500">
+                        {plan.quota} · cobrança {isAnnual ? "anual" : "mensal"}
+                      </td>
+                      <td className="py-3 text-right font-semibold">
+                        {isAnnual ? `${annualBRL}/ano` : `${monthly}/mês`}
                       </td>
                     </tr>
-                  )}
-                </tbody>
-              </table>
+                    {isAnnual && (
+                      <tr className="border-b border-neutral-200 text-neutral-500">
+                        <td className="py-3 pr-4">Desconto anual</td>
+                        <td className="py-3 pr-4">30% OFF</td>
+                        <td className="py-3 text-right font-medium">
+                          −{annualDiscountBRL}
+                        </td>
+                      </tr>
+                    )}
+                  </tbody>
+                </table>
 
-              {/* Total */}
-              <p className="mt-6 flex items-baseline justify-end gap-3 text-sm">
-                <span className="text-neutral-500">
-                  Total {isAnnual ? "anual" : "mensal"}
-                </span>
-                <span className="text-xl font-bold">
-                  {isAnnual ? annualBRL : monthly}
-                  <span className="text-sm font-medium text-neutral-500">
-                    {isAnnual ? "/ano" : "/mês"}
+                {/* Total */}
+                <p className="mt-6 flex items-baseline justify-end gap-3 text-sm">
+                  <span className="text-neutral-500">
+                    Total {isAnnual ? "anual" : "mensal"}
                   </span>
-                </span>
-              </p>
+                  <span className="text-xl font-bold">
+                    {isAnnual ? annualBRL : monthly}
+                    <span className="text-sm font-medium text-neutral-500">
+                      {isAnnual ? "/ano" : "/mês"}
+                    </span>
+                  </span>
+                </p>
 
-              {/* Condições */}
-              <p className="mt-8 text-xs leading-relaxed text-neutral-500">
-                Kickoff após o pagamento. Reunião{" "}
-                {isUnlimited ? "semanal" : "mensal"}, CS dedicado e suporte VIP.
-                Horas ilimitadas, 1 demanda ativa por vez, prazo de até 48h. Sem
-                fidelidade — pausa ou cancela quando quiser.
-                {isAnnual && " Plano anual com 30% de desconto."} Validade desta
-                proposta: 15 dias.
-              </p>
+                {/* O que está incluído */}
+                <p className="mt-8 text-[10px] uppercase tracking-widest text-neutral-400">
+                  O que está incluído
+                </p>
+                <ul className="mt-3 space-y-2 text-sm text-neutral-700">
+                  {plan.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-2">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-neutral-900" />
+                      <span className="leading-snug">{item}</span>
+                    </li>
+                  ))}
+                </ul>
 
-              {/* Footer */}
-              <footer className="mt-10 flex flex-wrap items-center justify-between gap-2 border-t border-neutral-200 pt-4 text-[11px] text-neutral-400">
-                <span>nohumans · agenciadeia.tech</span>
-                <span>contato@lucasmoraes.ai · +55 11 98350-7618</span>
-              </footer>
+                {/* Condições */}
+                <p className="mt-8 text-[10px] uppercase tracking-widest text-neutral-400">
+                  Condições
+                </p>
+                <ul className="mt-3 space-y-2 text-sm leading-relaxed text-neutral-600">
+                  <li>
+                    Kickoff após o pagamento para configurar o grupo e entender a
+                    demanda.
+                  </li>
+                  <li>
+                    Reunião {isUnlimited ? "semanal" : "mensal"}, CS dedicado e
+                    suporte VIP.
+                  </li>
+                  <li>
+                    Horas ilimitadas, 1 demanda ativa por vez, prazo de até 48h.
+                  </li>
+                  <li>Sem fidelidade — pausa ou cancela quando quiser.</li>
+                  {isAnnual && <li>Plano anual com 30% de desconto.</li>}
+                  <li>Validade desta proposta: 15 dias.</li>
+                </ul>
+
+                {/* Footer */}
+                <footer className="mt-10 flex flex-wrap items-center justify-between gap-2 border-t border-neutral-200 pt-4 text-[11px] text-neutral-400">
+                  <span>nohumans · agenciadeia.tech</span>
+                  <span>contato@lucasmoraes.ai · +55 11 98350-7618</span>
+                </footer>
+              </div>
             </div>
           </div>,
           document.body,
