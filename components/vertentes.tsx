@@ -30,12 +30,14 @@ const VERTENTES: Vertente[] = [
     icon: Icons.sparkles,
     title: "Agência de IA",
     body: "Agentes que trabalham por você, 24/7.",
+    large: true,
   },
   {
     href: "/software",
     icon: Icons.code,
     title: "Agência de Software",
     body: "Construídos sob medida, em dias.",
+    large: true,
   },
 ];
 
