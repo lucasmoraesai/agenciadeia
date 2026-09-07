@@ -15,7 +15,6 @@ export const HERO_PHRASES = [
   "Agência de IA",
   "Agência de Marketing",
   "Agência de Software",
-  "Agência de UX",
 ] as const;
 
 export const AVULSOS = [
