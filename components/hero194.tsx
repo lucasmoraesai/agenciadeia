@@ -140,9 +140,9 @@ const Hero194 = ({ className }: Hero194Props) => {
       <div className="dark relative overflow-hidden rounded-2xl bg-black">
         <div className="grid h-full w-full grid-cols-1 lg:max-h-[37.5rem] lg:grid-cols-2">
           <div className="flex w-full max-w-[90%] flex-col justify-center gap-5 py-16 pr-10 pl-20 md:max-w-[70%] lg:max-w-full lg:py-0">
-            <h1 className="text-4xl leading-[1.1] text-white md:text-5xl lg:text-4xl xl:text-5xl">
+            <h2 className="text-4xl leading-[1.1] text-white md:text-5xl lg:text-4xl xl:text-5xl">
               Sua operação em movimento.
-            </h1>
+            </h2>
             <p className="text-sm text-muted-foreground md:text-base">
               Agentes, automações e entregas rodando 24/7 — sem você tocar em
               nada. Você pede no grupo, a gente entrega em até 48h.

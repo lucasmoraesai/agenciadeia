@@ -137,6 +137,14 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="/quem-somos"
+                  className="text-sm text-muted transition-opacity hover:opacity-80"
+                >
+                  Quem somos
+                </a>
+              </li>
+              <li>
+                <a
                   href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
                   target="_blank"
                   rel="noreferrer"

@@ -1,9 +1,6 @@
-import { About6 } from "@/components/about6";
 import { Avulsos } from "@/components/avulsos";
 import { Brands } from "@/components/brands";
 import { Feature254 } from "@/components/feature254";
-import { Gallery24 } from "@/components/gallery24";
-import { Hero194 } from "@/components/hero194";
 import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { HyperspeedSection } from "@/components/hyperspeed-section";
@@ -45,17 +42,14 @@ export default function Home() {
       <JsonLd data={faqSchema(HOME_FAQ)} />
       <Hero />
       <Vertentes />
-      <Feature254 />
       <Brands />
       <HowItWorks />
+      <Services />
+      <Feature254 />
       <Plans />
       <Firings />
       <Avulsos />
       <Manifesto />
-      <About6 />
-      <Gallery24 />
-      <Hero194 />
-      <Services />
       <HyperspeedSection />
     </>
   );
