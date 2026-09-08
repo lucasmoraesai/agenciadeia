@@ -42,8 +42,8 @@ export default function Home() {
       <Brands />
       <HowItWorks />
       <Services />
-      <Feature254 />
       <Plans />
+      <Feature254 />
       <Firings />
       <Avulsos />
       <Manifesto />
