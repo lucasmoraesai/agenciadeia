@@ -12,7 +12,7 @@ const LINKS = [
 
 export function Nav() {
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 bg-background/30 backdrop-blur-md">
       <div className="mx-auto flex h-14 max-w-[1120px] items-center justify-between gap-4 px-6">
         <a href="/" className="shrink-0 transition-opacity hover:opacity-85">
           <Logo />

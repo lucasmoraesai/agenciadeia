@@ -6,7 +6,7 @@ import { Typewriter } from "./typewriter";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-border">
+    <section className="relative -mt-14 overflow-hidden border-b border-border">
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <LightRays
           raysOrigin="top-center"
