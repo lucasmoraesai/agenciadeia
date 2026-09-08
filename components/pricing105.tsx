@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Calendar, Check, MessageCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -110,9 +110,31 @@ const Pricing105 = (props: Props) => {
                 </ul>
                 <Button className="mt-8 w-full sm:w-auto" asChild>
                   <a href={plan.button.url} target="_blank" rel="noreferrer">
+                    <MessageCircle data-icon="inline-start" />
                     {plan.button.text}
                   </a>
                 </Button>
+                {plan.secondaryButton ? (
+                  <Button
+                    className="mt-3 w-full sm:w-auto"
+                    variant="outline"
+                    asChild
+                  >
+                    <a
+                      href={plan.secondaryButton.url}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <Calendar data-icon="inline-start" />
+                      {plan.secondaryButton.text}
+                    </a>
+                  </Button>
+                ) : null}
+                {plan.priceNote ? (
+                  <p className="mt-4 text-xs text-muted-foreground">
+                    {plan.priceNote}
+                  </p>
+                ) : null}
               </div>
             </div>
           </div>

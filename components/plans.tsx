@@ -1,14 +1,13 @@
-import { Pricing100 } from "./pricing100";
+import { Pricing105 } from "./pricing105";
 import { whatsappHref } from "@/lib/whatsapp";
 
 export function Plans() {
   return (
     <div id="planos" className="border-b border-border">
-      <Pricing100
+      <Pricing105
         className="py-24"
         heading="Um preço. Tudo incluso."
         description="Sem tier, sem pacote, sem letra miúda. Uma assinatura, todas as agências — você pede, a gente entrega em até 48h."
-        discount="-30%"
         plan={{
           name: "nohumans",
           description:
@@ -38,7 +37,7 @@ export function Plans() {
             ),
           },
           priceNote:
-            "No anual, R$ 4.200/mês equivalente (R$ 50.400/ano). Sem fidelidade — pausa ou cancela quando quiser.",
+            "Anual com 30% OFF: R$ 4.200/mês equivalente (R$ 50.400/ano). Sem fidelidade — pausa ou cancela quando quiser.",
         }}
       />
     </div>

@@ -7,7 +7,6 @@ import { HyperspeedSection } from "@/components/hyperspeed-section";
 import { JsonLd } from "@/components/json-ld";
 import { Firings, Manifesto } from "@/components/manifesto";
 import { Plans } from "@/components/plans";
-import { PricingPreview } from "@/components/pricing-preview";
 import { Services } from "@/components/services";
 import { Vertentes } from "@/components/vertentes";
 import { HOME_FAQ } from "@/lib/faq";
@@ -45,7 +44,6 @@ export default function Home() {
       <Services />
       <Feature254 />
       <Plans />
-      <PricingPreview />
       <Firings />
       <Avulsos />
       <Manifesto />
