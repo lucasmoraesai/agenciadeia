@@ -62,9 +62,9 @@ export default function Home() {
         logo={<SoftwareUxLogo className="h-7 w-7" />}
       />
       <Brands />
-      <Services />
       <Plans />
       <HowItWorks />
+      <Services />
       <Feature254 />
       <Avulsos />
       <Manifesto />

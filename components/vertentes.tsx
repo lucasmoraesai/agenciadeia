@@ -5,6 +5,7 @@ import { AutomacaoIalogo, GrowthLogo, SoftwareUxLogo } from "./agency-logos";
 
 type Vertente = {
   href: string;
+  anchor: string;
   icon: (props: { className?: string }) => ReactNode;
   title: string;
   body: string;
@@ -15,6 +16,7 @@ type Vertente = {
 const VERTENTES: Vertente[] = [
   {
     href: "/automacao",
+    anchor: "#automacao-ia",
     icon: (props) => <AutomacaoIalogo {...props} />,
     title: "Agência de Automação e IA",
     body: "Fluxos, robôs e agentes que trabalham por você, 24/7.",
@@ -22,6 +24,7 @@ const VERTENTES: Vertente[] = [
   },
   {
     href: "/marketing",
+    anchor: "#growth",
     icon: (props) => <GrowthLogo {...props} />,
     title: "Agência de",
     body: "Campanhas, conteúdo e tráfego no piloto automático.",
@@ -30,6 +33,7 @@ const VERTENTES: Vertente[] = [
   },
   {
     href: "/software",
+    anchor: "#software-ux",
     icon: (props) => <SoftwareUxLogo {...props} />,
     title: "Agência de Software e UX",
     body: "Construídos sob medida, em dias.",
@@ -93,10 +97,10 @@ export function Vertentes() {
                 }
               >
                 <a
-                  href="/#planos"
+                  href={vertente.anchor}
                   className="rounded-md bg-foreground px-4 py-2 text-xs font-medium text-background transition-opacity hover:opacity-85"
                 >
-                  Ver Plano
+                  Ver Agência
                 </a>
               </div>
             </article>
