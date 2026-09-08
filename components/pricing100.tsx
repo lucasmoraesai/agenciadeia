@@ -143,7 +143,7 @@ const Pricing100 = (props: Props) => {
                 ))}
               </ul>
             </CardContent>
-            <CardFooter className="flex-col gap-2 sm:flex-row">
+            <CardFooter className="flex-col gap-2">
               <Button className="w-full" variant="default" asChild>
                 <a href={plan.button.url} target="_blank" rel="noreferrer">
                   <MessageCircle data-icon="inline-start" />
