@@ -12,9 +12,10 @@ export const PHOTO_PROFILE = "/photos/perfil.jpg";
 
 export const HERO_PHRASES = [
   "Agência de Automação",
-  "Agência de IA",
-  "Agência de Marketing",
   "Agência de Software",
+  "Agência de Marketing",
+  "Consultoria de IA",
+  "Agência de IA",
 ] as const;
 
 export const AVULSOS = [
