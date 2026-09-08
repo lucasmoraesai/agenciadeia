@@ -10,7 +10,7 @@ type Brand = {
   iconClass?: string;
 };
 
-const BRANDS: Brand[] = [
+export const BRANDS: Brand[] = [
   {
     name: "DeepSeek",
     viewBox: "0 0 23.16 17.04",

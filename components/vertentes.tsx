@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "./container";
 import { Icons } from "./agency-page";
+import { Typewriter } from "./typewriter";
 
 type Vertente = {
   href: string;
@@ -8,6 +9,7 @@ type Vertente = {
   title: string;
   body: string;
   large?: boolean;
+  typewriter?: readonly string[];
 };
 
 const VERTENTES: Vertente[] = [
@@ -21,9 +23,10 @@ const VERTENTES: Vertente[] = [
   {
     href: "/marketing",
     icon: Icons.megaphone,
-    title: "Agência de Marketing",
+    title: "Agência de",
     body: "Campanhas, conteúdo e tráfego no piloto automático.",
     large: true,
+    typewriter: ["Marketing", "Growth"],
   },
   {
     href: "/ia",
@@ -80,6 +83,12 @@ export function Vertentes() {
                   }
                 >
                   {vertente.title}
+                  {vertente.typewriter ? (
+                    <>
+                      {" "}
+                      <Typewriter phrases={vertente.typewriter} />
+                    </>
+                  ) : null}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">
                   {vertente.body}

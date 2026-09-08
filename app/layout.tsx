@@ -25,11 +25,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `${SITE_NAME} — Agência de IA e Automação por assinatura | R$ 6.000/mês`,
+    default: `Agência de IA e Automação por assinatura | ${SITE_NAME}`,
     template: `%s · ${SITE_NAME}`,
   },
   description:
-    "Agência de IA e automação por assinatura para empresas brasileiras: um plano único com tudo incluso — automação de processos, agentes de IA, marketing e software. Horas ilimitadas, 1 demanda por vez e entrega em até 48h via WhatsApp. R$ 6.000/mês, sem fidelidade.",
+    "Agência de IA e automação por assinatura para empresas brasileiras. Um plano único com tudo incluso: automação de processos, agentes de IA, marketing e software. Horas ilimitadas, entrega em até 48h. R$ 6.000/mês, sem fidelidade.",
   keywords: [
     "agência de IA",
     "agência de automação",
@@ -39,6 +39,7 @@ export const metadata: Metadata = {
     "agência de software",
     "automação com IA Brasil",
     "agência de IA por assinatura",
+    "automatizar empresa",
   ],
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
@@ -51,9 +52,9 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: `${SITE_NAME} — Agência de IA e Automação por assinatura | R$ 6.000/mês`,
+    title: `Agência de IA e Automação por assinatura | ${SITE_NAME}`,
     description:
-      "Agência de IA e automação por assinatura: um plano único com tudo incluso — automação, agentes de IA, marketing e software. Horas ilimitadas, 1 demanda por vez, entrega em até 48h via WhatsApp.",
+      "Agência de IA e automação por assinatura: um plano único com tudo incluso — automação de processos, agentes de IA, marketing e software. Horas ilimitadas, entrega em até 48h.",
     url: SITE_URL,
     siteName: SITE_NAME,
     locale: "pt_BR",
@@ -69,9 +70,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} — Agência de IA e Automação por assinatura | R$ 6.000/mês`,
+    title: `Agência de IA e Automação por assinatura | ${SITE_NAME}`,
     description:
-      "Agência de IA e automação por assinatura: um plano único com tudo incluso — automação, agentes de IA, marketing e software. Horas ilimitadas, prazo de 48h.",
+      "Agência de IA e automação por assinatura: um plano único com tudo incluso — automação de processos, agentes de IA, marketing e software. Horas ilimitadas, prazo de 48h.",
     images: ["/og.png"],
   },
 };

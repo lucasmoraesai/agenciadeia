@@ -120,7 +120,7 @@ const SERVICES: ServiceItem[] = [
     id: "relatorios",
     title: "Relatórios",
     body: "Relatórios recorrentes, prontos e entregues.",
-    className: "",
+    className: "hidden md:block",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <path d="M7 3h7l5 5v13H7V3Z" />

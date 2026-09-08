@@ -1,4 +1,4 @@
-import { Calendar, Check } from "lucide-react";
+import { Calendar, Check, ChevronDown } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -12,6 +12,7 @@ interface PricingSinglePlan {
   yearlyPrice: string;
   period?: { monthly: string; yearly: string };
   features: string[];
+  agencies?: { name: string; items: string[] }[];
   button: { text: string; url: string };
   secondaryButton?: { text: string; url: string };
   featureListLabel?: string;
@@ -99,6 +100,35 @@ const Pricing105 = (props: Props) => {
                   <p className="mb-3 text-sm font-semibold">
                     {plan.featureListLabel}
                   </p>
+                ) : null}
+                {plan.agencies ? (
+                  <div className="mb-1">
+                    <div className="flex flex-col gap-2.5">
+                      <p className="flex items-start gap-2 text-sm">
+                        <Check className="mt-0.5 size-4 shrink-0" />
+                        <span className="text-pretty">Todas as Agências</span>
+                      </p>
+                      {plan.agencies.map((agency) => (
+                        <details key={agency.name} className="group">
+                          <summary className="flex cursor-pointer list-none items-start gap-1.5 text-sm [&::-webkit-details-marker]:hidden">
+                            <Check className="mt-0.5 size-4 shrink-0" />
+                            <span className="text-pretty">{agency.name}</span>
+                            <ChevronDown className="mt-0.5 size-4 shrink-0 text-subtle transition-transform duration-200 group-open:rotate-180" />
+                          </summary>
+                          <ul className="flex flex-col gap-1.5 pb-1 pl-6 pt-2">
+                            {agency.items.map((item) => (
+                              <li
+                                key={item}
+                                className="flex items-start gap-2 text-sm text-muted"
+                              >
+                                <span className="min-w-0 text-pretty">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </details>
+                      ))}
+                    </div>
+                  </div>
                 ) : null}
                 <ul className="flex flex-col gap-2.5">
                   {plan.features.map((feature, i) => (

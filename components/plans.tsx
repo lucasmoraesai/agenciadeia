@@ -16,9 +16,53 @@ export function Plans() {
           yearlyPrice: "R$ 4.200",
           period: { monthly: "/mês", yearly: "/mês" },
           featureListLabel: "O que está incluso",
+          agencies: [
+            {
+              name: "Agência de Automação",
+              items: [
+                "Automação de processos",
+                "Integrações (CRM, ERP, APIs)",
+                "Robôs (RPA)",
+                "Automação de vendas",
+                "Automação de atendimento",
+                "Dashboards",
+              ],
+            },
+            {
+              name: "Agência de IA",
+              items: [
+                "Agentes de IA",
+                "Automações inteligentes",
+                "Vibe coding",
+                "Chatbots & atendimento",
+                "Análise de dados",
+                "Consultoria em IA",
+              ],
+            },
+            {
+              name: "Agência de Marketing",
+              items: [
+                "Campanhas de performance",
+                "Conteúdo & copy",
+                "Criativos & anúncios",
+                "SEO & autoridade",
+                "Social media",
+                "Funil & CRM",
+              ],
+            },
+            {
+              name: "Agência de Software",
+              items: [
+                "Aplicações web",
+                "Sistemas sob medida",
+                "Integrações & APIs",
+                "Dashboards",
+                "Landing pages",
+                "Manutenção & evolução",
+              ],
+            },
+          ],
           features: [
-            "Todas as agências: Automação, IA, Marketing e Software",
-            "Todos os departamentos",
             "Horas ilimitadas, 1 demanda por vez",
             "Entrega em até 48h",
             "Setup e kickoff gratuitos",

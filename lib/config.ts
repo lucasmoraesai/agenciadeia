@@ -11,11 +11,11 @@ export const LINKEDIN = "https://www.linkedin.com/in/lucasmoraesai/";
 export const PHOTO_PROFILE = "/photos/perfil.jpg";
 
 export const HERO_PHRASES = [
+  "Agência de IA",
   "Agência de Automação",
   "Agência de Software",
   "Agência de Marketing",
   "Consultoria de IA",
-  "Agência de IA",
 ] as const;
 
 export const AVULSOS = [
@@ -49,21 +49,6 @@ export const AVULSOS = [
     title: "RH",
     body: "Admissão, onboarding, vaga e rotina de people.",
   },
-  {
-    id: "produto",
-    title: "Produto",
-    body: "Roadmap, spec, protótipo e vibe coding.",
-  },
-  {
-    id: "tecnologia",
-    title: "Tecnologia",
-    body: "Automação interna, Claude Code e stack.",
-  },
-  {
-    id: "dados",
-    title: "Dados",
-    body: "Painel, extração, BI e relatório recorrente.",
-  },
 ] as const;
 
 export const AVULSO_PRICE = "R$ 3.000";
@@ -85,9 +70,6 @@ export const DEPARTAMENTOS = [
   "Financeiro",
   "Operações",
   "RH",
-  "Produto",
-  "Tecnologia",
-  "Dados",
 ] as const;
 
 export const PLANS = [

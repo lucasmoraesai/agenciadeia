@@ -102,6 +102,14 @@ export function Footer() {
                   Quem somos
                 </a>
               </li>
+              <li>
+                <a
+                  href="/blog/"
+                  className="text-sm text-muted transition-opacity hover:opacity-80"
+                >
+                  Blog
+                </a>
+              </li>
             </ul>
           </div>
         </div>

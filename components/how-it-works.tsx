@@ -5,11 +5,11 @@ export function HowItWorks() {
   return (
     <section id="como" className="py-24">
       <Container>
-        <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
+        <p className="font-mono text-sm uppercase tracking-widest text-subtle">
           Como funciona
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-          Contrata. Criamos o grupo. Você pede. Entregamos.
+          Você pede. A gente entrega.
         </h2>
         <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((step) => (

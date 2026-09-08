@@ -9,27 +9,30 @@ interface Feature254Props {
   className?: string;
 }
 
+const img = (id: string) =>
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=200&q=80`;
+
+const circle1Images = [
+  img("photo-1560250097-0b93528c311a"),
+  img("photo-1573496359142-b8d87734a5a2"),
+  img("photo-1507003211169-0a1dd7228f2d"),
+];
+
+const circle2Images = [
+  img("photo-1438761681033-6461ffad8d80"),
+  img("photo-1500648767791-00dcc994a43e"),
+  img("photo-1494790108377-be9c29b29330"),
+];
+
+const circle3Images = [
+  img("photo-1472099645785-5658abf4ff4e"),
+  img("photo-1544005313-94ddf0286df2"),
+  img("photo-1506794778202-cad84cf45f1d"),
+  img("photo-1534528741775-53994a69daeb"),
+  img("photo-1519345182560-3f2917c472ef"),
+];
+
 const Feature254 = ({ className }: Feature254Props) => {
-  const circle1Images = [
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/random11.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person4.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person5.jpeg",
-  ];
-
-  const circle2Images = [
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw1.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw2.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/bw3.jpeg",
-  ];
-
-  const circle3Images = [
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person1.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person2.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person3.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person4.jpeg",
-    "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/lummi/person5.jpeg",
-  ];
-
   return (
     <section className={cn("py-32", className)}>
       <div className="relative">
