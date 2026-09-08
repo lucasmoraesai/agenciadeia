@@ -39,10 +39,11 @@ export function HeroTypewriter({ line1, line2 }: HeroTypewriterProps) {
     const target1 = line1[idx1 % line1.length];
     const target2 = line2[idx2 % line2.length];
 
-    let delay = 55;
-    if (phase === "start") delay = 1500;
-    if (phase === "l1-hold" || phase === "l2-hold") delay = 1300;
-    if (phase === "l1-del" || phase === "l2-del") delay = 25;
+    let delay = 55; // typing
+    if (phase === "start") delay = 3500;
+    if (phase === "l1-hold") delay = 3500;
+    if (phase === "l2-hold") delay = 5000;
+    if (phase === "l1-del" || phase === "l2-del") delay = 30;
 
     const timer = window.setTimeout(() => {
       if (phase === "start") {

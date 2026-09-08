@@ -38,7 +38,7 @@ const VERTENTES: Vertente[] = [
   {
     href: "/software",
     icon: Icons.code,
-    title: "Agência de Software",
+    title: "Agência de Software e UX",
     body: "Construídos sob medida, em dias.",
     large: true,
   },

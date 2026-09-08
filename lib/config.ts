@@ -11,18 +11,23 @@ export const LINKEDIN = "https://www.linkedin.com/in/lucasmoraesai/";
 export const PHOTO_PROFILE = "/photos/perfil.jpg";
 
 export const HERO_PHRASES = [
-  "Agência de IA",
   "Agência de Automação",
   "Agência de Software",
   "Agência de Marketing",
+  "Agência de IA",
+  "Agência de Growth",
   "Consultoria de IA",
+  "Agência de UX",
 ] as const;
 
 export const HERO_SUFFIXES = [
   "por assinatura",
   "AI First",
+  "por assinatura",
   "on demand",
+  "por assinatura",
   "as a Service",
+  "por assinatura",
   "All-in-one",
 ] as const;
 
