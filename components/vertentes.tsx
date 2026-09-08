@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Container } from "./container";
-import { Icons } from "./agency-page";
 import { Typewriter } from "./typewriter";
+import { AutomacaoIalogo, GrowthLogo, SoftwareUxLogo } from "./agency-logos";
 
 type Vertente = {
   href: string;
@@ -15,14 +15,14 @@ type Vertente = {
 const VERTENTES: Vertente[] = [
   {
     href: "/automacao",
-    icon: Icons.workflow,
+    icon: (props) => <AutomacaoIalogo {...props} />,
     title: "Agência de Automação e IA",
     body: "Fluxos, robôs e agentes que trabalham por você, 24/7.",
     large: true,
   },
   {
     href: "/marketing",
-    icon: Icons.megaphone,
+    icon: (props) => <GrowthLogo {...props} />,
     title: "Agência de",
     body: "Campanhas, conteúdo e tráfego no piloto automático.",
     large: true,
@@ -30,7 +30,7 @@ const VERTENTES: Vertente[] = [
   },
   {
     href: "/software",
-    icon: Icons.code,
+    icon: (props) => <SoftwareUxLogo {...props} />,
     title: "Agência de Software e UX",
     body: "Construídos sob medida, em dias.",
     large: true,
@@ -63,8 +63,8 @@ export function Vertentes() {
                   (vertente.large ? "p-8 pb-0" : "p-6 pb-0")
                 }
               >
-                <span className="flex h-10 w-10 origin-left items-center justify-center rounded-lg border border-border text-subtle transition-transform duration-300 group-hover:scale-90">
-                  <vertente.icon className="h-5 w-5" />
+                <span className="flex h-10 w-10 origin-left items-center justify-center rounded-lg border border-border text-foreground transition-transform duration-300 group-hover:scale-90">
+                  <vertente.icon className="h-6 w-6" />
                 </span>
                 <h3
                   className={
