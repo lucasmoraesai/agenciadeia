@@ -18,6 +18,14 @@ export const HERO_PHRASES = [
   "Consultoria de IA",
 ] as const;
 
+export const HERO_SUFFIXES = [
+  "por assinatura",
+  "AI First",
+  "on demand",
+  "as a Service",
+  "All-in-one",
+] as const;
+
 export const AVULSOS = [
   {
     id: "marketing",

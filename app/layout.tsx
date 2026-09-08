@@ -25,7 +25,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: `Agência de IA e Automação por assinatura | ${SITE_NAME}`,
+    default: `Agência de IA e Automação`,
     template: `%s · ${SITE_NAME}`,
   },
   description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   openGraph: {
-    title: `Agência de IA e Automação por assinatura | ${SITE_NAME}`,
+    title: `Agência de IA e Automação`,
     description:
       "Agência de IA e automação por assinatura: um plano único com tudo incluso — automação de processos, agentes de IA, marketing e software. Horas ilimitadas, entrega em até 48h.",
     url: SITE_URL,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `Agência de IA e Automação por assinatura | ${SITE_NAME}`,
+    title: `Agência de IA e Automação`,
     description:
       "Agência de IA e automação por assinatura: um plano único com tudo incluso — automação de processos, agentes de IA, marketing e software. Horas ilimitadas, prazo de 48h.",
     images: ["/og.png"],

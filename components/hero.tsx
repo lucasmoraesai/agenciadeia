@@ -1,7 +1,7 @@
-import { HERO_PHRASES } from "@/lib/config";
+import { HERO_PHRASES, HERO_SUFFIXES } from "@/lib/config";
 import LightRays from "./light-rays";
 import { Container } from "./container";
-import { Typewriter } from "./typewriter";
+import { HeroTypewriter } from "./hero-typewriter";
 
 export function Hero() {
   return (
@@ -23,9 +23,7 @@ export function Hero() {
       </div>
       <Container className="relative pt-36 pb-28 sm:pt-44 sm:pb-36">
         <h1 className="rise tracking-tighter-display max-w-4xl text-5xl font-semibold leading-[1.02] sm:text-7xl lg:text-[84px]">
-          <Typewriter phrases={HERO_PHRASES} />
-          <br />
-          <span className="text-subtle">por assinatura</span>
+          <HeroTypewriter line1={HERO_PHRASES} line2={HERO_SUFFIXES} />
         </h1>
         <p
           className="rise mt-7 max-w-xl text-xl text-muted"
