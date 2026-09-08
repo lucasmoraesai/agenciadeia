@@ -76,7 +76,6 @@ export const VERTENTES = [
   "IA",
   "Marketing",
   "Software",
-  "UX",
 ] as const;
 
 export const DEPARTAMENTOS = [

@@ -1,125 +1,114 @@
+import { Check, MessageCircle } from "lucide-react";
 import { DEPARTAMENTOS, PLANS, VERTENTES } from "@/lib/config";
 import { whatsappHref } from "@/lib/whatsapp";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import { Container } from "./container";
-import { AnimatedGradientText } from "./magicui/animated-gradient-text";
-import { ShineBorder } from "./magicui/shine-border";
 
 export function Plans() {
+  const plan = PLANS[0];
+
   return (
     <section id="planos" className="border-b border-border py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
-          Planos
+          Plano
         </p>
         <h2 className="tracking-tighter-display mt-3 text-3xl font-semibold sm:text-4xl">
-          Horas ilimitadas, prazo de até 48h.
+          Um plano. Tudo incluso.
         </h2>
-        <p className="mt-4 max-w-xl text-muted">1 demanda por vez.</p>
-        <div className="mx-auto mt-14 grid max-w-xl gap-5">
-          {PLANS.map((plan) => (
-            <article
-              key={plan.id}
-              className={`relative flex flex-col rounded-xl border p-7 ${
-                plan.featured
-                  ? "border-border-strong bg-surface"
-                  : "border-border bg-background"
-              }`}
-            >
-              {plan.featured && (
-                <>
-                  <span className="absolute -top-2.5 left-7 rounded-full bg-foreground px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-background">
-                    Tudo incluso
-                  </span>
-                  <ShineBorder
-                    className="rounded-xl"
-                    shineColor={["#a855f7", "#3b82f6", "#22d3ee"]}
-                  />
-                </>
-              )}
-              <h3 className="text-lg font-medium tracking-tight">{plan.name}</h3>
-              {plan.featured ? (
-                <AnimatedGradientText
-                  className="mt-6 text-3xl font-semibold tracking-tight"
-                  colorFrom="#c084fc"
-                  colorTo="#60a5fa"
-                >
-                  {plan.price}
-                </AnimatedGradientText>
-              ) : (
-                <p className="mt-6 text-3xl font-semibold tracking-tight">
-                  {plan.price}
-                </p>
-              )}
-              <p className="mt-1 text-sm text-subtle">
-                {plan.period} · {plan.quota}
-              </p>
-              <div className="mt-6 border-t border-border pt-6">
-                <p className="text-xs font-medium text-subtle">
-                  {plan.featured ? "Todas as agências" : "Escolha 1 agência"}
-                </p>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {VERTENTES.map((vertente) => (
-                    <li
-                      key={vertente}
-                      className={
-                        "flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs " +
-                        (plan.featured
-                          ? "border-border-strong text-foreground"
-                          : "border-border text-muted")
-                      }
-                    >
-                      {plan.featured && (
-                        <span className="text-foreground">✓</span>
-                      )}
-                      {vertente}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-4 border-t border-border pt-6">
-                <p className="text-xs font-medium text-subtle">
-                  {plan.featured ? "Todos os departamentos" : "Escolha 1 departamento"}
-                </p>
-                <ul className="mt-3 flex flex-wrap gap-2">
-                  {DEPARTAMENTOS.map((departamento) => (
-                    <li
-                      key={departamento}
-                      className={
-                        "flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs " +
-                        (plan.featured
-                          ? "border-border-strong text-foreground"
-                          : "border-border text-muted")
-                      }
-                    >
-                      {plan.featured && (
-                        <span className="text-foreground">✓</span>
-                      )}
-                      {departamento}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <ul className="mt-6 flex-1 space-y-3 border-t border-border pt-6">
-                {plan.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-muted">
-                    <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-foreground" />
-                    <span className="leading-snug">{item}</span>
-                  </li>
+        <p className="mt-4 max-w-xl text-muted">
+          R$ 6.000/mês. Horas ilimitadas, 1 demanda por vez, prazo de até 48h.
+        </p>
+
+        <Card className="relative mx-auto mt-14 max-w-lg overflow-visible border-border-strong bg-surface">
+          <CardHeader className="flex flex-col items-center text-center">
+            <Badge className="absolute -top-3">Tudo incluso</Badge>
+            <CardTitle className="text-2xl tracking-tight">
+              {plan.name}
+            </CardTitle>
+            <CardDescription>
+              Uma assinatura. Todas as agências e departamentos.
+            </CardDescription>
+            <p className="mt-3 flex items-baseline gap-1.5">
+              <span className="text-5xl font-semibold tracking-tight">
+                {plan.price}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {plan.period}
+              </span>
+            </p>
+          </CardHeader>
+
+          <CardContent className="flex flex-col gap-6">
+            <Separator />
+
+            <div className="flex flex-col gap-3">
+              <p className="text-sm font-medium">Todas as agências</p>
+              <div className="flex flex-wrap gap-2">
+                {VERTENTES.map((vertente) => (
+                  <Badge key={vertente} variant="outline">
+                    <Check />
+                    {vertente}
+                  </Badge>
                 ))}
-              </ul>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-3">
+              <p className="text-sm font-medium">Todos os departamentos</p>
+              <div className="flex flex-wrap gap-2">
+                {DEPARTAMENTOS.map((departamento) => (
+                  <Badge key={departamento} variant="outline">
+                    <Check />
+                    {departamento}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            <Separator />
+
+            <ul className="flex flex-col gap-3">
+              {plan.includes.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-sm text-muted-foreground"
+                >
+                  <Check className="mt-0.5 size-4 shrink-0 text-foreground" />
+                  <span className="leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </CardContent>
+
+          <CardFooter className="flex flex-col">
+            <Button asChild className="w-full" size="lg">
               <a
                 href={whatsappHref(
                   "Quero assinar o plano de R$ 6.000/mês da nohumans.",
                 )}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-8 flex items-center justify-center rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
               >
+                <MessageCircle data-icon="inline-start" />
                 Falar no WhatsApp
               </a>
-            </article>
-          ))}
-        </div>
+            </Button>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Sem fidelidade. Pausa ou cancela quando quiser.
+            </p>
+          </CardFooter>
+        </Card>
       </Container>
     </section>
   );
