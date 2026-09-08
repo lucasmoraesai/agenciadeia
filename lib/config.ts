@@ -93,32 +93,14 @@ export const DEPARTAMENTOS = [
 
 export const PLANS = [
   {
-    id: "agencia",
-    name: "Por agência",
-    price: "R$ 3.000",
-    period: "/mês",
-    quota: "1 agência + 1 departamento",
-    featured: false,
-    href: "/start-checkout/?plan=agencia",
-    cta: "Assinar",
-    includes: [
-      "Kickoff após o pagamento",
-      "Grupo no WhatsApp",
-      "Reunião mensal",
-      "CS dedicado",
-      "Suporte VIP",
-      "Horas ilimitadas, 1 demanda, prazo 48h",
-    ],
-  },
-  {
     id: "ilimitado",
-    name: "Ilimitado",
+    name: "nohumans",
     price: "R$ 6.000",
     period: "/mês",
     quota: "Todas as agências e departamentos",
     featured: true,
     href: "/start-checkout/?plan=ilimitado",
-    cta: "Assinar Ilimitado",
+    cta: "Falar no WhatsApp",
     includes: [
       "Kickoff após o pagamento",
       "Grupo no WhatsApp",
@@ -126,6 +108,7 @@ export const PLANS = [
       "CS dedicado",
       "Suporte VIP",
       "Horas ilimitadas, 1 demanda, prazo 48h",
+      "Todas as agências: Automação, IA, Marketing e Software",
     ],
   },
 ] as const;

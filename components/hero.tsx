@@ -1,4 +1,5 @@
 import { HERO_PHRASES } from "@/lib/config";
+import { whatsappHref } from "@/lib/whatsapp";
 import { Container } from "./container";
 import { Typewriter } from "./typewriter";
 
@@ -24,16 +25,20 @@ export function Hero() {
           style={{ animationDelay: "140ms" }}
         >
           <a
-            href="#planos"
+            href={whatsappHref(
+              "Quero assinar o plano de R$ 6.000/mês da nohumans.",
+            )}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
           >
-            Ver planos
+            Falar no WhatsApp
           </a>
           <a
-            href="/start-checkout/?plan=ilimitado"
+            href="#planos"
             className="rounded-md border border-border-strong px-5 py-2.5 text-sm font-medium transition-colors hover:bg-surface-hover"
           >
-            Assinar Ilimitado
+            Ver planos
           </a>
         </div>
       </Container>

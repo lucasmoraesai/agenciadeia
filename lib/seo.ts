@@ -100,6 +100,8 @@ export type OfferInput = {
   name: string;
   price: number;
   description?: string;
+  /** id do plano usado no checkout (ex.: "ilimitado"). */
+  plan?: string;
 };
 
 /** Schema.org — Service com ofertas (preços em BRL, mensal). */
@@ -129,7 +131,7 @@ export function serviceSchema({
       price: offer.price,
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/checkout/?plan=${offer.name === "Ilimitado" ? "ilimitado" : "agencia"}`,
+      url: `${SITE_URL}/checkout/?plan=${offer.plan ?? (offer.name === "Ilimitado" ? "ilimitado" : "agencia")}`,
     })),
   };
 }

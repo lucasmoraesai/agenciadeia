@@ -1,4 +1,5 @@
 import { DEPARTAMENTOS, PLANS, VERTENTES } from "@/lib/config";
+import { whatsappHref } from "@/lib/whatsapp";
 import { Container } from "./container";
 import { AnimatedGradientText } from "./magicui/animated-gradient-text";
 import { ShineBorder } from "./magicui/shine-border";
@@ -14,7 +15,7 @@ export function Plans() {
           Horas ilimitadas, prazo de até 48h.
         </h2>
         <p className="mt-4 max-w-xl text-muted">1 demanda por vez.</p>
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+        <div className="mx-auto mt-14 grid max-w-xl gap-5">
           {PLANS.map((plan) => (
             <article
               key={plan.id}
@@ -27,7 +28,7 @@ export function Plans() {
               {plan.featured && (
                 <>
                   <span className="absolute -top-2.5 left-7 rounded-full bg-foreground px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-widest text-background">
-                    Completo
+                    Tudo incluso
                   </span>
                   <ShineBorder
                     className="rounded-xl"
@@ -107,14 +108,14 @@ export function Plans() {
                 ))}
               </ul>
               <a
-                href={plan.href ?? "/checkout/?plan=ilimitado"}
-                className={`mt-8 flex items-center justify-center rounded-md px-4 py-2.5 text-sm font-medium transition-opacity hover:opacity-85 ${
-                  plan.featured
-                    ? "bg-foreground text-background"
-                    : "border border-border-strong"
-                }`}
+                href={whatsappHref(
+                  "Quero assinar o plano de R$ 6.000/mês da nohumans.",
+                )}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 flex items-center justify-center rounded-md bg-foreground px-4 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
               >
-                {plan.cta}
+                Falar no WhatsApp
               </a>
             </article>
           ))}

@@ -21,19 +21,16 @@ export default function Home() {
     <>
       <JsonLd
         data={serviceSchema({
-          name: "Agência de IA e Automação",
+          name: "nohumans — Agência por assinatura",
           description:
-            "Assinatura mensal de agência de IA e automação: automação de processos, agentes de IA, marketing, software e UX para empresas brasileiras. Horas ilimitadas, 1 demanda por vez, prazo de até 48h e entrega via WhatsApp.",
+            "Assinatura mensal única da nohumans: automação, IA, marketing e software, tudo incluso. Horas ilimitadas, 1 demanda por vez, prazo de até 48h e entrega via WhatsApp.",
           offers: [
             {
-              name: "Por agência",
-              price: 3000,
-              description: "1 agência + 1 departamento, reunião mensal.",
-            },
-            {
-              name: "Ilimitado",
+              name: "nohumans",
+              plan: "ilimitado",
               price: 6000,
-              description: "Todas as agências e departamentos, reunião semanal.",
+              description:
+                "Tudo incluso: todas as agências e departamentos, reunião semanal.",
             },
           ],
         })}
