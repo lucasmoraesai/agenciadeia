@@ -27,6 +27,7 @@ interface BentoCardProps extends ComponentPropsWithoutRef<"div"> {
   Icon?: React.ElementType;
   visual?: ReactNode;
   className?: string;
+  iconColor?: string;
 }
 
 const BentoCard = ({
@@ -35,6 +36,7 @@ const BentoCard = ({
   Icon,
   visual,
   className,
+  iconColor,
   ...props
 }: BentoCardProps) => (
   <div
@@ -47,7 +49,10 @@ const BentoCard = ({
     <div className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-white/[0.04] blur-3xl transition-opacity duration-500 opacity-0 group-hover:opacity-100" />
     <div className="pointer-events-none relative z-10 flex transform-gpu flex-col gap-2.5 transition-transform duration-300 group-hover:-translate-y-1">
       {Icon && (
-        <span className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground">
+        <span
+          className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground"
+          style={iconColor ? { color: iconColor } : undefined}
+        >
           <Icon className="h-4 w-4" />
         </span>
       )}

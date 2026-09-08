@@ -1,4 +1,5 @@
 import { Pricing105 } from "./pricing105";
+import { AutomacaoIalogo, GrowthLogo, SoftwareUxLogo } from "./agency-logos";
 import { whatsappHref } from "@/lib/whatsapp";
 
 export function Plans() {
@@ -19,6 +20,7 @@ export function Plans() {
           agencies: [
             {
               name: "Agência de Automação e IA",
+              logo: <AutomacaoIalogo className="h-full w-full" />,
               items: [
                 "Automação de processos",
                 "Integrações (CRM, ERP, APIs)",
@@ -32,6 +34,7 @@ export function Plans() {
             },
             {
               name: "Agência de Marketing",
+              logo: <GrowthLogo className="h-full w-full" />,
               items: [
                 "Campanhas de performance",
                 "Conteúdo & copy",
@@ -43,6 +46,7 @@ export function Plans() {
             },
             {
               name: "Agência de Software",
+              logo: <SoftwareUxLogo className="h-full w-full" />,
               items: [
                 "Aplicações web",
                 "Sistemas sob medida",

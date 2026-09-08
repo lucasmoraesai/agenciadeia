@@ -3,6 +3,7 @@ import React from "react";
 
 import { OrbitingCircles } from "@/components/ui/orbiting-circles";
 import { Button } from "@/components/ui/button";
+import { AutomacaoIalogo, GrowthLogo, SoftwareUxLogo } from "./agency-logos";
 import { cn } from "@/lib/utils";
 
 interface Feature254Props {
@@ -12,10 +13,11 @@ interface Feature254Props {
 const img = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=200&q=80`;
 
-const circle1Images = [
-  img("photo-1560250097-0b93528c311a"),
-  img("photo-1573496359142-b8d87734a5a2"),
-  img("photo-1507003211169-0a1dd7228f2d"),
+// Círculo interno: os 3 logos das agências (produtos da nohumans).
+const circle1Logos = [
+  <AutomacaoIalogo key="auto" className="h-5 w-5" />,
+  <GrowthLogo key="growth" className="h-5 w-5" />,
+  <SoftwareUxLogo key="swux" className="h-5 w-5" />,
 ];
 
 const circle2Images = [
@@ -60,12 +62,12 @@ const Feature254 = ({ className }: Feature254Props) => {
           </div>
           <div className="relative flex h-[420px] w-full flex-col items-center justify-center overflow-hidden sm:h-[620px]">
             <OrbitingCircles iconSize={40} radius={130} speed={2}>
-              {circle1Images.map((src, index) => (
+              {circle1Logos.map((logo, index) => (
                 <div
                   key={index}
-                  className="size-10 overflow-hidden rounded-full"
+                  className="flex size-10 items-center justify-center rounded-full border border-border bg-surface"
                 >
-                  <img src={src} className="size-full object-cover" alt="" />
+                  {logo}
                 </div>
               ))}
             </OrbitingCircles>

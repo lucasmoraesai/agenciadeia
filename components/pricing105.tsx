@@ -1,4 +1,5 @@
 import { Calendar, Check, ChevronDown } from "lucide-react";
+import type { ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -12,7 +13,7 @@ interface PricingSinglePlan {
   yearlyPrice: string;
   period?: { monthly: string; yearly: string };
   features: string[];
-  agencies?: { name: string; items: string[] }[];
+  agencies?: { name: string; items: string[]; logo?: ReactNode }[];
   button: { text: string; url: string };
   secondaryButton?: { text: string; url: string };
   featureListLabel?: string;
@@ -110,8 +111,14 @@ const Pricing105 = (props: Props) => {
                       </p>
                       {plan.agencies.map((agency) => (
                         <details key={agency.name} className="group">
-                          <summary className="flex cursor-pointer list-none items-start gap-1.5 text-sm [&::-webkit-details-marker]:hidden">
-                            <Check className="mt-0.5 size-4 shrink-0" />
+                          <summary className="flex cursor-pointer list-none items-start gap-2 text-sm [&::-webkit-details-marker]:hidden">
+                            {agency.logo ? (
+                              <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center">
+                                {agency.logo}
+                              </span>
+                            ) : (
+                              <Check className="mt-0.5 size-4 shrink-0" />
+                            )}
                             <span className="text-pretty">{agency.name}</span>
                             <ChevronDown className="mt-0.5 size-4 shrink-0 text-subtle transition-transform duration-200 group-open:rotate-180" />
                           </summary>

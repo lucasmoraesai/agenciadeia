@@ -9,6 +9,13 @@ import { Manifesto } from "@/components/manifesto";
 import { Plans } from "@/components/plans";
 import { Services } from "@/components/services";
 import { Vertentes } from "@/components/vertentes";
+import { AgencySection } from "@/components/agency-section";
+import {
+  AutomacaoIalogo,
+  GrowthLogo,
+  SoftwareUxLogo,
+} from "@/components/agency-logos";
+import { AGENCIES } from "@/lib/agencies";
 import { HOME_FAQ } from "@/lib/faq";
 import {
   faqSchema,
@@ -39,6 +46,21 @@ export default function Home() {
       <JsonLd data={faqSchema(HOME_FAQ)} />
       <Hero />
       <Vertentes />
+      <AgencySection
+        id="automacao-ia"
+        agency={AGENCIES[0]}
+        logo={<AutomacaoIalogo className="h-7 w-7" />}
+      />
+      <AgencySection
+        id="growth"
+        agency={AGENCIES[1]}
+        logo={<GrowthLogo className="h-7 w-7" />}
+      />
+      <AgencySection
+        id="software-ux"
+        agency={AGENCIES[2]}
+        logo={<SoftwareUxLogo className="h-7 w-7" />}
+      />
       <Brands />
       <Services />
       <Plans />

@@ -15,6 +15,7 @@ type ServiceItem = {
   className: string;
   visual?: ReactNode;
   icon: (props: IconProps) => ReactNode;
+  color?: string;
 };
 
 function IconFrame({ children, className }: { children: ReactNode; className?: string }) {
@@ -40,6 +41,7 @@ const SERVICES: ServiceItem[] = [
     title: "Automação de Processos",
     body: "Fluxos que rodam sozinhos, ponta a ponta.",
     className: "col-span-2 md:col-span-2 md:row-span-2",
+    color: "#00e5ff",
     visual: (
       <SplineScene
         scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
@@ -58,6 +60,7 @@ const SERVICES: ServiceItem[] = [
     title: "Agentes de IA",
     body: "Agentes que trabalham por você, 24/7.",
     className: "",
+    color: "#00e5ff",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <rect x="5" y="8" width="14" height="12" rx="3" />
@@ -73,6 +76,7 @@ const SERVICES: ServiceItem[] = [
     title: "Criação de Landing Pages",
     body: "Páginas rápidas, feitas pra converter.",
     className: "",
+    color: "#a3ff12",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <rect x="3" y="4" width="18" height="16" rx="2" />
@@ -86,6 +90,7 @@ const SERVICES: ServiceItem[] = [
     title: "CRM",
     body: "Pipeline, follow-up e proposta automatizados.",
     className: "",
+    color: "#ff2ec4",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <path d="M4 4h16l-5.5 7.5V20l-5-2.5v-6L4 4Z" />
@@ -97,6 +102,7 @@ const SERVICES: ServiceItem[] = [
     title: "Plataformas",
     body: "Sistemas sob medida, integrados ao seu negócio.",
     className: "",
+    color: "#a3ff12",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <path d="m12 3 9 5-9 5-9-5 9-5Z" />
@@ -109,6 +115,7 @@ const SERVICES: ServiceItem[] = [
     title: "Dashboards",
     body: "Seus números em tempo real, num painel.",
     className: "md:col-span-2",
+    color: "#00e5ff",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <path d="M4 20v-6M10 20V8M16 20v-10" />
@@ -121,6 +128,7 @@ const SERVICES: ServiceItem[] = [
     title: "Relatórios",
     body: "Relatórios recorrentes, prontos e entregues.",
     className: "hidden md:block",
+    color: "#ff2ec4",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <path d="M7 3h7l5 5v13H7V3Z" />
@@ -134,6 +142,7 @@ const SERVICES: ServiceItem[] = [
     title: "Integrações",
     body: "Sistemas conectados: APIs, ERPs e WhatsApp.",
     className: "",
+    color: "#00e5ff",
     icon: (props: IconProps) => (
       <IconFrame {...props}>
         <path d="M12 22v-5" />
@@ -171,6 +180,7 @@ export function Services() {
                 description={service.body}
                 Icon={service.icon}
                 visual={service.visual}
+                iconColor={service.color}
               />
             </BlurFade>
           ))}
