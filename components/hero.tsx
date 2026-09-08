@@ -1,6 +1,5 @@
 import { HERO_PHRASES } from "@/lib/config";
 import { whatsappHref } from "@/lib/whatsapp";
-import ParticleText from "./particle-text";
 import { Container } from "./container";
 import { Typewriter } from "./typewriter";
 
@@ -36,27 +35,6 @@ export function Hero() {
             Falar no WhatsApp
           </a>
         </div>
-
-        <ParticleText
-          text="nohumans"
-          particleSize={2}
-          density={4}
-          color="#ededed"
-          highlightColor="#a1a1a1"
-          scatter={180}
-          gatherDuration={1600}
-          stagger={420}
-          pointerRepel={40}
-          repelRadius={120}
-          idleDrift={0.7}
-          trigger="hover"
-          fontSize="clamp(3rem, 12vw, 8rem)"
-          fontWeight={800}
-          fontFamily="inherit"
-          glow
-          className="mt-16"
-          style={{ height: 320 }}
-        />
       </Container>
     </section>
   );
