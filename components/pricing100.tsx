@@ -1,6 +1,6 @@
 "use client";
 
-import { CircleCheck } from "lucide-react";
+import { Calendar, CircleCheck, MessageCircle } from "lucide-react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -146,6 +146,7 @@ const Pricing100 = (props: Props) => {
             <CardFooter className="flex-col gap-2 sm:flex-row">
               <Button className="w-full" variant="default" asChild>
                 <a href={plan.button.url} target="_blank" rel="noreferrer">
+                  <MessageCircle data-icon="inline-start" />
                   {plan.button.text}
                 </a>
               </Button>
@@ -156,6 +157,7 @@ const Pricing100 = (props: Props) => {
                     target="_blank"
                     rel="noreferrer"
                   >
+                    <Calendar data-icon="inline-start" />
                     {plan.secondaryButton.text}
                   </a>
                 </Button>
