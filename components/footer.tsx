@@ -20,7 +20,7 @@ const PROGRAMS = [
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer id="contato" className="border-t border-border">
+    <footer id="contato">
       {/* Links */}
       <Container className="py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">

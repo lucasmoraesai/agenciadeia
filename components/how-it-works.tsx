@@ -3,7 +3,7 @@ import { Container } from "./container";
 
 export function HowItWorks() {
   return (
-    <section id="como" className="border-b border-border py-24">
+    <section id="como" className="py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
           Como funciona

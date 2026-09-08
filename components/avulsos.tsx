@@ -6,7 +6,7 @@ import { DepartmentIcon } from "./department-icon";
 
 export function Avulsos() {
   return (
-    <section id="avulsos" className="border-b border-border py-24">
+    <section id="avulsos" className="py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
           Departamentos

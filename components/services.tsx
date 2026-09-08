@@ -146,7 +146,7 @@ const SERVICES: ServiceItem[] = [
 
 export function Services() {
   return (
-    <section id="servicos" className="border-b border-border py-24">
+    <section id="servicos" className="py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
           Serviços

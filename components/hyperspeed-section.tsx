@@ -43,7 +43,7 @@ const HYPERSPEED_OPTIONS: HyperspeedOptions = {
 
 export function HyperspeedSection() {
   return (
-    <section id="velocidade" className="relative overflow-hidden border-b border-border">
+    <section id="velocidade" className="relative overflow-hidden">
       <div className="absolute inset-0">
         <Hyperspeed effectOptions={HYPERSPEED_OPTIONS} />
       </div>

@@ -9,7 +9,7 @@ const FIRINGS = [
 
 export function Manifesto() {
   return (
-    <section className="border-b border-border py-28 sm:py-32">
+    <section className="py-28 sm:py-32">
       <Container>
         <p className="tracking-tighter-display max-w-4xl text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-[64px]">
           Chega de contratar e demitir humans.
@@ -27,7 +27,7 @@ export function Manifesto() {
 
 export function Firings() {
   return (
-    <section className="border-b border-border py-28 sm:py-32">
+    <section className="py-28 sm:py-32">
       <Container>
         <p className="tracking-tighter-display max-w-4xl text-4xl font-semibold leading-[1.08] sm:text-5xl lg:text-[64px]">
           Chega de prazos infinitos.

@@ -63,7 +63,7 @@ const BRANDS: Brand[] = [
 
 export function Brands() {
   return (
-    <section id="stack" className="border-b border-border py-20 sm:py-24">
+    <section id="stack" className="py-20 sm:py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
           Especialistas em

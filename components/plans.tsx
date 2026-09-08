@@ -3,7 +3,7 @@ import { whatsappHref } from "@/lib/whatsapp";
 
 export function Plans() {
   return (
-    <div id="planos" className="border-b border-border">
+    <div id="planos">
       <Pricing105
         className="py-24"
         heading="Um preço. Tudo incluso."

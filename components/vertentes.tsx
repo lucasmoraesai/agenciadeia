@@ -43,7 +43,7 @@ const VERTENTES: Vertente[] = [
 
 export function Vertentes() {
   return (
-    <section id="vertentes" className="border-b border-border py-24">
+    <section id="vertentes" className="py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
           Vertentes
