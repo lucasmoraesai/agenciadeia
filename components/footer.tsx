@@ -1,14 +1,5 @@
 "use client";
 
-import {
-  EMAIL,
-  INSTAGRAM,
-  INSTAGRAM_HANDLE,
-  LINKEDIN,
-  WHATSAPP_DISPLAY,
-  WHATSAPP_URL,
-} from "@/lib/config";
-import { whatsappHref } from "@/lib/whatsapp";
 import { Container } from "./container";
 import { Logo } from "./logo";
 
@@ -26,51 +17,10 @@ const PROGRAMS = [
   { href: "/afiliado", label: "Quero ser um Afiliado" },
 ];
 
-const SOCIALS = [
-  { label: "WhatsApp", href: WHATSAPP_URL, external: true },
-  { label: INSTAGRAM_HANDLE, href: INSTAGRAM, external: true },
-  { label: "LinkedIn", href: LINKEDIN, external: true },
-  { label: EMAIL, href: "mailto:" + EMAIL, external: false },
-];
-
 export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer id="contato" className="border-t border-border">
-      {/* CTA */}
-      <div className="border-b border-border">
-        <Container className="py-20 sm:py-24">
-          <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
-            Contato
-          </p>
-          <h2 className="tracking-tighter-display mt-3 max-w-xl text-3xl font-semibold sm:text-4xl">
-            Contrata. A gente cria o grupo.
-          </h2>
-          <p className="mt-4 max-w-xl text-muted">
-            Kickoff após o pagamento, grupo no WhatsApp, CS dedicado e suporte
-            VIP.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4">
-            <a
-              href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
-            >
-              Falar no WhatsApp
-            </a>
-            <a
-              href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
-              target="_blank"
-              rel="noreferrer"
-              className="text-xl tracking-tight transition-opacity hover:opacity-80 sm:text-2xl"
-            >
-              {WHATSAPP_DISPLAY}
-            </a>
-          </div>
-        </Container>
-      </div>
-
       {/* Links */}
       <Container className="py-14">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
@@ -80,20 +30,6 @@ export function Footer() {
               Agência automatizada por IA. Automação, agents, vibe coding e
               software — tudo no piloto automático.
             </p>
-            <ul className="mt-6 space-y-2">
-              {SOCIALS.map((social) => (
-                <li key={social.label}>
-                  <a
-                    href={social.href}
-                    target={social.external ? "_blank" : undefined}
-                    rel={social.external ? "noreferrer" : undefined}
-                    className="text-sm text-muted transition-opacity hover:opacity-80"
-                  >
-                    {social.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
           <div>
             <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
@@ -147,7 +83,7 @@ export function Footer() {
                   href="/#planos"
                   className="text-sm text-muted transition-opacity hover:opacity-80"
                 >
-                  Planos
+                  Plano
                 </a>
               </li>
               <li>
@@ -164,16 +100,6 @@ export function Footer() {
                   className="text-sm text-muted transition-opacity hover:opacity-80"
                 >
                   Quem somos
-                </a>
-              </li>
-              <li>
-                <a
-                  href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-sm text-muted transition-opacity hover:opacity-80"
-                >
-                  WhatsApp
                 </a>
               </li>
             </ul>

@@ -33,7 +33,7 @@ export function Nav() {
             href="/#planos"
             className="rounded-md border border-border-strong px-3 py-1 text-xs font-medium transition-colors hover:bg-surface-hover"
           >
-            Ver planos
+            Ver plano
           </a>
           <a
             href={whatsappHref("Quero automatizar a empresa com a nohumans.")}
