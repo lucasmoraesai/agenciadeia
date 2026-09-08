@@ -1,27 +1,10 @@
 import { Pricing105 } from "./pricing105";
-import LightRays from "./light-rays";
 import { whatsappHref } from "@/lib/whatsapp";
 
 export function Plans() {
   return (
-    <div id="planos" className="relative overflow-hidden border-b border-border">
-      <div className="pointer-events-none absolute inset-0 opacity-25">
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#ededed"
-          raysSpeed={1}
-          lightSpread={0.5}
-          rayLength={1}
-          fadeDistance={1}
-          saturation={0.4}
-          followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0}
-          distortion={0.05}
-        />
-      </div>
-      <div className="relative">
-        <Pricing105
+    <div id="planos" className="border-b border-border">
+      <Pricing105
         className="py-24"
         heading="Um preço. Tudo incluso."
         description="Sem tier, sem pacote, sem letra miúda. Uma assinatura, todas as agências — você pede, a gente entrega em até 48h."
@@ -53,7 +36,6 @@ export function Plans() {
           },
         }}
       />
-      </div>
     </div>
   );
 }
