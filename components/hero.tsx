@@ -29,7 +29,7 @@ export function Hero() {
           className="rise mt-7 max-w-xl text-xl text-muted"
           style={{ animationDelay: "80ms" }}
         >
-          Automatize sua empresa, sem contratar
+          Automatize sua empresa, sem contratar ninguém
         </p>
         <div
           className="rise mt-10 flex flex-wrap gap-3"
