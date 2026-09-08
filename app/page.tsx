@@ -5,7 +5,7 @@ import { Hero } from "@/components/hero";
 import { HowItWorks } from "@/components/how-it-works";
 import { HyperspeedSection } from "@/components/hyperspeed-section";
 import { JsonLd } from "@/components/json-ld";
-import { Firings, Manifesto } from "@/components/manifesto";
+import { Manifesto } from "@/components/manifesto";
 import { Plans } from "@/components/plans";
 import { Services } from "@/components/services";
 import { Vertentes } from "@/components/vertentes";
@@ -40,11 +40,10 @@ export default function Home() {
       <Hero />
       <Vertentes />
       <Brands />
-      <HowItWorks />
       <Services />
       <Plans />
+      <HowItWorks />
       <Feature254 />
-      <Firings />
       <Avulsos />
       <Manifesto />
       <HyperspeedSection />

@@ -11,7 +11,7 @@ const BentoGrid = ({ children, className, ...props }: BentoGridProps) => {
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[12rem] grid-cols-2 gap-4 md:grid-cols-4",
+        "grid w-full auto-rows-auto grid-cols-2 gap-4 md:auto-rows-[12rem] md:grid-cols-4",
         className
       )}
       {...props}
@@ -61,7 +61,7 @@ const BentoCard = ({
       </div>
     </div>
     {visual && (
-      <div className="relative z-0 mt-4 min-h-0 flex-1">{visual}</div>
+      <div className="relative z-0 mt-4 min-h-40 flex-1 md:min-h-0">{visual}</div>
     )}
   </div>
 );

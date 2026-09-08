@@ -46,7 +46,7 @@ export function Vertentes() {
     <section id="vertentes" className="py-24">
       <Container>
         <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
-          Vertentes
+          Agência All-in-one
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
           Quatro agências. Em 1 só lugar.
@@ -94,10 +94,10 @@ export function Vertentes() {
                 }
               >
                 <a
-                  href={vertente.href}
+                  href="/#planos"
                   className="rounded-md bg-foreground px-4 py-2 text-xs font-medium text-background transition-opacity hover:opacity-85"
                 >
-                  Conhecer
+                  Ver Plano
                 </a>
               </div>
             </article>

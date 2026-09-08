@@ -1,12 +1,11 @@
 import { HERO_PHRASES } from "@/lib/config";
-import { whatsappHref } from "@/lib/whatsapp";
 import LightRays from "./light-rays";
 import { Container } from "./container";
 import { Typewriter } from "./typewriter";
 
 export function Hero() {
   return (
-    <section className="relative -mt-14 overflow-hidden">
+    <section id="hero" className="relative -mt-14 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-30">
         <LightRays
           raysOrigin="top-center"
@@ -22,7 +21,7 @@ export function Hero() {
           distortion={0.05}
         />
       </div>
-      <Container className="relative py-28 sm:py-36">
+      <Container className="relative pt-36 pb-28 sm:pt-44 sm:pb-36">
         <h1 className="rise tracking-tighter-display max-w-4xl text-5xl font-semibold leading-[1.02] sm:text-7xl lg:text-[84px]">
           <Typewriter phrases={HERO_PHRASES} />
           <br />
@@ -39,14 +38,10 @@ export function Hero() {
           style={{ animationDelay: "140ms" }}
         >
           <a
-            href={whatsappHref(
-              "Quero assinar o plano de R$ 6.000/mês da nohumans.",
-            )}
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
+            href="/#planos"
+            className="rounded-md bg-foreground px-6 py-3.5 text-base font-medium text-background transition-opacity hover:opacity-85 sm:px-6 sm:py-2.5 sm:text-sm"
           >
-            Falar no WhatsApp
+            Ver Plano
           </a>
         </div>
       </Container>

@@ -62,13 +62,7 @@ export function HyperspeedSection() {
             href="#planos"
             className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-85"
           >
-            Ver planos
-          </a>
-          <a
-            href="/checkout/?plan=ilimitado"
-            className="rounded-md border border-border-strong bg-black/40 px-5 py-2.5 text-sm font-medium backdrop-blur-sm transition-colors hover:bg-surface-hover"
-          >
-            Assinar Ilimitado
+            Ver Plano
           </a>
         </div>
       </Container>

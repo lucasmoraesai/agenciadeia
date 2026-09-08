@@ -131,7 +131,8 @@ export function serviceSchema({
       price: offer.price,
       priceCurrency: "BRL",
       availability: "https://schema.org/InStock",
-      url: `${SITE_URL}/checkout/?plan=${offer.plan ?? (offer.name === "Ilimitado" ? "ilimitado" : "agencia")}`,
+      // Oferta aponta para a seção indexável da home, não para rotas noindex.
+      url: `${SITE_URL}/#planos`,
     })),
   };
 }
@@ -150,7 +151,7 @@ export function offerCatalogSchema() {
       description: plan.includes.join(". "),
       price: plan.price.replace(/\D/g, ""),
       priceCurrency: "BRL",
-      url: `${SITE_URL}${plan.href ?? "/checkout/?plan=ilimitado"}`,
+      url: `${SITE_URL}/#planos`,
     })),
   };
 }

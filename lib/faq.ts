@@ -10,15 +10,15 @@ import type { FaqItem } from "./seo";
 export const HOME_FAQ: FaqItem[] = [
   {
     q: "O que é a nohumans?",
-    a: "A nohumans (agenciadeia.tech) é uma agência de IA e automação para empresas brasileiras. Por assinatura mensal, ela assume frentes da sua empresa — automação de processos, IA, marketing, software e UX — com entrega via grupo de WhatsApp e prazo de até 48 horas por demanda.",
+    a: "A nohumans (agenciadeia.tech) é uma agência de IA e automação para empresas brasileiras. Por assinatura mensal, ela assume as frentes da sua empresa — automação de processos, IA, marketing e software — com entrega via grupo de WhatsApp e prazo de até 48 horas por demanda.",
   },
   {
     q: "Quanto custa a nohumans?",
-    a: "Os planos custam R$ 3.000/mês (1 agência + 1 departamento, por exemplo Agência de Automação + Marketing) ou R$ 6.000/mês no plano Ilimitado, que inclui todas as agências e todos os departamentos. Não há fidelidade: você pausa ou cancela quando quiser.",
+    a: "A nohumans tem um único plano de R$ 6.000/mês com tudo incluso: todas as agências (Automação, IA, Marketing e Software) e todos os departamentos, horas ilimitadas e reunião semanal. Não há fidelidade: você pausa ou cancela quando quiser.",
   },
   {
     q: "O que está incluso na assinatura?",
-    a: "Horas ilimitadas com 1 demanda ativa por vez, prazo de entrega de até 48h, grupo no WhatsApp com kickoff após o pagamento, reunião mensal (semanal no plano Ilimitado), CS dedicado e suporte VIP.",
+    a: "Horas ilimitadas com 1 demanda ativa por vez, prazo de entrega de até 48h, grupo no WhatsApp com kickoff após o pagamento, reunião semanal, CS dedicado e suporte VIP.",
   },
   {
     q: "Como funciona a entrega?",

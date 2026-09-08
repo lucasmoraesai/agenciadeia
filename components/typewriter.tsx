@@ -10,7 +10,9 @@ export function Typewriter({
   className?: string;
 }) {
   const [index, setIndex] = useState(0);
-  const [text, setText] = useState("");
+  // Inicia com a primeira frase completa para que o HTML servido (SSR/crawler)
+  // contenha a palavra-chave no h1, mesmo antes do JS digitar.
+  const [text, setText] = useState(() => phrases[0] ?? "");
   const [deleting, setDeleting] = useState(false);
   const [reduce, setReduce] = useState(false);
 
