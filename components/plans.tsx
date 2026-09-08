@@ -18,25 +18,16 @@ export function Plans() {
           featureListLabel: "O que está incluso",
           agencies: [
             {
-              name: "Agência de Automação",
+              name: "Agência de Automação e IA",
               items: [
                 "Automação de processos",
                 "Integrações (CRM, ERP, APIs)",
                 "Robôs (RPA)",
-                "Automação de vendas",
-                "Automação de atendimento",
-                "Dashboards",
-              ],
-            },
-            {
-              name: "Agência de IA",
-              items: [
                 "Agentes de IA",
-                "Automações inteligentes",
                 "Vibe coding",
                 "Chatbots & atendimento",
                 "Análise de dados",
-                "Consultoria em IA",
+                "Dashboards",
               ],
             },
             {

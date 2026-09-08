@@ -70,8 +70,7 @@ export const AVULSO_PERIOD = "/mês por departamento";
 export const ILIMITADO_AMOUNT = 6000;
 
 export const VERTENTES = [
-  "Automação",
-  "IA",
+  "Automação e IA",
   "Marketing",
   "Software",
 ] as const;
@@ -102,7 +101,7 @@ export const PLANS = [
       "CS dedicado",
       "Suporte VIP",
       "Horas ilimitadas, 1 demanda, prazo 48h",
-      "Todas as agências: Automação, IA, Marketing e Software",
+      "Todas as agências: Automação e IA, Marketing e Software",
     ],
   },
 ] as const;

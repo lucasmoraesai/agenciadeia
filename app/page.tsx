@@ -23,7 +23,7 @@ export default function Home() {
         data={serviceSchema({
           name: "nohumans — Agência por assinatura",
           description:
-            "Assinatura mensal única da nohumans: automação, IA, marketing e software, tudo incluso. Horas ilimitadas, 1 demanda por vez, prazo de até 48h e entrega via WhatsApp.",
+            "Assinatura mensal única da nohumans: automação e IA, marketing e software, tudo incluso. Horas ilimitadas, 1 demanda por vez, prazo de até 48h e entrega via WhatsApp.",
           offers: [
             {
               name: "nohumans",

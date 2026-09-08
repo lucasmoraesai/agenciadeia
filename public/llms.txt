@@ -4,7 +4,7 @@
 
 ## Key pages
 
-- [Início](https://agenciadeia.tech/): Agência de IA e automação por assinatura — 4 agências (Automação, IA, Marketing e Software) e 6 departamentos, por um único preço.
+- [Início](https://agenciadeia.tech/): Agência de IA e automação por assinatura — 3 agências (Automação e IA, Marketing e Software) e 6 departamentos, por um único preço.
 - [Agência de Automação](https://agenciadeia.tech/automacao/): Automação de processos, RPA, integrações de CRM/ERP/WhatsApp, automação de vendas, atendimento, financeiro e dashboards.
 - [Agência de IA](https://agenciadeia.tech/ia/): Agentes de IA 24/7, automações inteligentes, vibe coding, chatbots, análise de dados e consultoria em IA.
 - [Agência de Marketing](https://agenciadeia.tech/marketing/): Campanhas de performance, conteúdo, criativos, SEO, social media, funil e CRM com IA.
@@ -14,7 +14,7 @@
 
 ## Facts
 
-- Preço: R$ 6.000/mês — plano único com todas as agências (Automação, IA, Marketing e Software) e todos os departamentos.
+- Preço: R$ 6.000/mês — plano único com todas as agências (Automação e IA, Marketing e Software) e todos os departamentos.
 - Entrega: grupo no WhatsApp, 1 demanda ativa por vez, prazo de até 48 horas, kickoff e setup gratuitos.
 - Reunião semanal, CS dedicado e suporte VIP.
 - Pagamento: PIX, Bitcoin e Ethereum.

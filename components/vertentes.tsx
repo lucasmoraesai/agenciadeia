@@ -16,8 +16,8 @@ const VERTENTES: Vertente[] = [
   {
     href: "/automacao",
     icon: Icons.workflow,
-    title: "Agência de Automação",
-    body: "Fluxos e robôs que rodam sozinhos, ponta a ponta.",
+    title: "Agência de Automação e IA",
+    body: "Fluxos, robôs e agentes que trabalham por você, 24/7.",
     large: true,
   },
   {
@@ -27,13 +27,6 @@ const VERTENTES: Vertente[] = [
     body: "Campanhas, conteúdo e tráfego no piloto automático.",
     large: true,
     typewriter: ["Marketing", "Growth"],
-  },
-  {
-    href: "/ia",
-    icon: Icons.sparkles,
-    title: "Agência de IA",
-    body: "Agentes que trabalham por você, 24/7.",
-    large: true,
   },
   {
     href: "/software",
@@ -52,19 +45,16 @@ export function Vertentes() {
           Agência All-in-one
         </p>
         <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-          Quatro agências. Em 1 só lugar.
+          Três agências. Em 1 só lugar.
         </h2>
         <p className="mt-4 max-w-xl text-muted">
           Escolha a frente que sua empresa precisa — ou combine todas.
         </p>
-        <div className="mt-12 grid gap-4 md:grid-cols-6">
+        <div className="mt-12 grid gap-4 md:grid-cols-3">
           {VERTENTES.map((vertente) => (
             <article
               key={vertente.href}
-              className={
-                "group relative flex flex-col overflow-hidden rounded-xl border border-border bg-background transition-colors duration-300 hover:bg-surface " +
-                (vertente.large ? "md:col-span-3" : "md:col-span-2")
-              }
+              className="group relative flex flex-col overflow-hidden rounded-xl border border-border bg-background transition-colors duration-300 hover:bg-surface"
             >
               {/* conteúdo — sobe no hover */}
               <div

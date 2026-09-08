@@ -37,7 +37,7 @@ const ALTERNATIVES: Alternative[] = [
 ];
 
 const NOHUMANS_ITEMS = [
-  "Automação, IA, marketing e software",
+  "Automação e IA, marketing e software",
   "Todos os departamentos",
   "Horas ilimitadas, 1 demanda por vez",
   "Entrega em até 48h",

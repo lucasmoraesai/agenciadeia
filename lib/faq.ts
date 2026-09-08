@@ -14,7 +14,7 @@ export const HOME_FAQ: FaqItem[] = [
   },
   {
     q: "Quanto custa a nohumans?",
-    a: "A nohumans tem um único plano de R$ 6.000/mês com tudo incluso: todas as agências (Automação, IA, Marketing e Software) e todos os departamentos, horas ilimitadas e reunião semanal. Não há fidelidade: você pausa ou cancela quando quiser.",
+    a: "A nohumans tem um único plano de R$ 6.000/mês com tudo incluso: todas as agências (Automação e IA, Marketing e Software) e todos os departamentos, horas ilimitadas e reunião semanal. Não há fidelidade: você pausa ou cancela quando quiser.",
   },
   {
     q: "O que está incluso na assinatura?",
