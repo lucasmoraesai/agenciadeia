@@ -3,14 +3,7 @@ import { DEPARTAMENTOS, PLANS } from "@/lib/config";
 import { whatsappHref } from "@/lib/whatsapp";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Container } from "./container";
 
@@ -35,46 +28,61 @@ export function Plans() {
   return (
     <section id="planos" className="border-b border-border py-24">
       <Container>
-        <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
-          Plano único
-        </p>
-        <h2 className="tracking-tighter-display mt-3 max-w-2xl text-3xl font-semibold sm:text-4xl">
-          Um preço. Tudo incluso.
-        </h2>
-        <p className="mt-4 max-w-xl text-muted">
-          Sem tier, sem pacote, sem letra miúda. Uma assinatura, todas as
-          agências — você pede, a gente entrega em até 48h.
-        </p>
+        <div className="flex flex-col gap-4">
+          <Badge variant="outline" className="w-fit">
+            Plano único
+          </Badge>
+          <h2 className="tracking-tighter-display max-w-2xl text-3xl font-semibold sm:text-4xl">
+            Um preço. Tudo incluso.
+          </h2>
+          <p className="max-w-xl text-muted">
+            Sem tier, sem pacote, sem letra miúda. Uma assinatura, todas as
+            agências — você pede, a gente entrega em até 48h.
+          </p>
+        </div>
 
-        <Card className="mx-auto mt-14 max-w-3xl overflow-hidden border-border-strong bg-surface">
-          <CardHeader className="flex flex-row items-start justify-between gap-6">
-            <div className="flex flex-col gap-3">
-              <Badge variant="outline" className="w-fit">
-                Plano único
-              </Badge>
-              <CardTitle className="text-5xl font-semibold tracking-tight sm:text-6xl">
-                {plan.price}
-                <span className="ml-1 text-lg font-normal text-muted-foreground">
-                  {plan.period}
-                </span>
-              </CardTitle>
-              <CardDescription className="max-w-xs text-base">
-                {plan.name} — sua agência por assinatura. Todas as agências e
-                departamentos, horas ilimitadas.
-              </CardDescription>
+        <Card className="mx-auto mt-14 max-w-4xl overflow-hidden border-border-strong bg-surface">
+          <CardContent className="grid p-0 md:grid-cols-[1fr_1.2fr]">
+            {/* Coluna de decisão: preço + garantias + CTA */}
+            <div className="flex flex-col justify-between gap-10 border-b border-border p-8 md:border-b-0 md:border-r">
+              <div className="flex flex-col gap-5">
+                <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
+                  Assinatura mensal
+                </p>
+                <p className="text-5xl font-semibold tracking-tight sm:text-6xl">
+                  {plan.price}
+                  <span className="ml-1 text-xl font-normal text-muted-foreground">
+                    {plan.period}
+                  </span>
+                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {plan.name} — sua agência por assinatura. Todas as agências e
+                  departamentos, horas ilimitadas.
+                </p>
+                <Separator />
+                <ul className="flex flex-col gap-2 text-sm text-muted-foreground">
+                  <li>Setup e kickoff gratuitos</li>
+                  <li>Sem fidelidade — pausa ou cancela quando quiser</li>
+                  <li>PIX, Bitcoin ou Ethereum</li>
+                </ul>
+              </div>
+
+              <Button asChild size="lg" className="w-full">
+                <a
+                  href={whatsappHref(
+                    "Quero assinar o plano de R$ 6.000/mês da nohumans.",
+                  )}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <MessageCircle data-icon="inline-start" />
+                  Falar no WhatsApp
+                </a>
+              </Button>
             </div>
-            <div
-              aria-hidden
-              className="mt-2 hidden rotate-6 rounded border-2 border-border-strong px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.3em] text-subtle sm:block"
-            >
-              Tudo incluso
-            </div>
-          </CardHeader>
 
-          <CardContent className="flex flex-col gap-8">
-            <Separator />
-
-            <div className="grid gap-10 md:grid-cols-2">
+            {/* Coluna do que está incluso */}
+            <div className="flex flex-col gap-8 p-8">
               <div className="flex flex-col gap-4">
                 <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
                   As 4 agências
@@ -96,6 +104,8 @@ export function Plans() {
                 </ul>
               </div>
 
+              <Separator />
+
               <div className="flex flex-col gap-4">
                 <p className="font-mono text-[11px] uppercase tracking-widest text-subtle">
                   Como funciona
@@ -112,30 +122,14 @@ export function Plans() {
                   ))}
                 </ul>
               </div>
+
+              <Separator />
+
+              <p className="text-xs leading-relaxed text-muted-foreground">
+                Também incluso: {DEPARTAMENTOS.join(" · ")}.
+              </p>
             </div>
-
-            <p className="text-xs leading-relaxed text-muted-foreground">
-              Também incluso: {DEPARTAMENTOS.join(" · ")}.
-            </p>
           </CardContent>
-
-          <CardFooter className="flex flex-col gap-4 border-t sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-xs text-muted-foreground">
-              CS dedicado · Reunião semanal · PIX, Bitcoin ou Ethereum
-            </p>
-            <Button asChild size="lg" className="w-full sm:w-auto">
-              <a
-                href={whatsappHref(
-                  "Quero assinar o plano de R$ 6.000/mês da nohumans.",
-                )}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <MessageCircle data-icon="inline-start" />
-                Falar no WhatsApp
-              </a>
-            </Button>
-          </CardFooter>
         </Card>
       </Container>
     </section>
