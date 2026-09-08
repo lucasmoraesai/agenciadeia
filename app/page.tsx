@@ -45,6 +45,8 @@ export default function Home() {
       <JsonLd data={offerCatalogSchema()} />
       <JsonLd data={faqSchema(HOME_FAQ)} />
       <Hero />
+      <Plans />
+      <HowItWorks />
       <Vertentes />
       <AgencySection
         id="automacao-ia"
@@ -62,8 +64,6 @@ export default function Home() {
         logo={<SoftwareUxLogo className="h-7 w-7" />}
       />
       <Brands />
-      <Plans />
-      <HowItWorks />
       <Services />
       <Feature254 />
       <Avulsos />
