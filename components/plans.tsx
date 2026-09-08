@@ -32,12 +32,8 @@ export function Plans() {
           },
           secondaryButton: {
             text: "Agendar reunião",
-            url: whatsappHref(
-              "Quero agendar uma reunião sobre o plano da nohumans.",
-            ),
+            url: "https://cal.com/lucas-moraes-zxcwn7/nohumans",
           },
-          priceNote:
-            "Anual com 30% OFF: R$ 4.200/mês equivalente (R$ 50.400/ano). Sem fidelidade — pausa ou cancela quando quiser.",
         }}
       />
     </div>
