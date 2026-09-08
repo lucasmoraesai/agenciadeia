@@ -1,11 +1,33 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { whatsappHref } from "@/lib/whatsapp";
 import { Logo } from "./logo";
 
 export function Nav() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const hero = document.querySelector("main section");
+      const passed = hero ? hero.getBoundingClientRect().bottom <= 64 : false;
+      setScrolled(passed);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50">
+    <header
+      className={`sticky top-0 z-50 transition-colors duration-300 ${
+        scrolled ? "bg-background/80 backdrop-blur-xl" : "bg-transparent"
+      }`}
+    >
       <div className="mx-auto flex h-14 max-w-[1120px] items-center justify-between gap-4 px-6">
         <a href="/" className="shrink-0 transition-opacity hover:opacity-85">
           <Logo />
