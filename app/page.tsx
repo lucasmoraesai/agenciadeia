@@ -45,9 +45,15 @@ export default function Home() {
       <JsonLd data={offerCatalogSchema()} />
       <JsonLd data={faqSchema(HOME_FAQ)} />
       <Hero />
-      <Plans />
-      <HowItWorks />
       <Vertentes />
+      <div className="flex flex-col">
+        <div className="order-2 lg:order-1">
+          <HowItWorks />
+        </div>
+        <div className="order-1 lg:order-2">
+          <Plans />
+        </div>
+      </div>
       <AgencySection
         id="automacao-ia"
         agency={AGENCIES[0]}
