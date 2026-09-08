@@ -3,13 +3,6 @@
 import { whatsappHref } from "@/lib/whatsapp";
 import { Logo } from "./logo";
 
-const LINKS = [
-  { href: "/automacao", label: "Agência de Automação" },
-  { href: "/ia", label: "Agência de IA" },
-  { href: "/marketing", label: "Agência de Marketing" },
-  { href: "/software", label: "Agência de Software" },
-];
-
 export function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-background/30 backdrop-blur-md">
@@ -17,17 +10,6 @@ export function Nav() {
         <a href="/" className="shrink-0 transition-opacity hover:opacity-85">
           <Logo />
         </a>
-        <nav className="hidden items-center gap-5 lg:flex">
-          {LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="whitespace-nowrap text-xs text-muted transition-opacity hover:opacity-80"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
         <div className="flex shrink-0 items-center gap-2.5">
           <a
             href="/#planos"
